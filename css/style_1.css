@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+/*
+Theme Name: Validthemes
+Theme URI: https://wordpress.validthemes.net/validthemes
+Author: Validthemes
+Author URI: https://themeforest.net/user/validthemes/portfolio
+Description: Validthemes - Organic Farm Agriculture WordPress Theme
+Version: 2.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: validthemes
+Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready
+*/
+
+.woocommerce-verification-required {
+    display: none !important;
+}

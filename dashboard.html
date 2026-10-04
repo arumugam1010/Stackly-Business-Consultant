@@ -1,0 +1,2114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Buskey - Corporate Business Template">
+
+    <!-- ========== Page Title ========== -->
+    <title>Dashboard - Buskey Corporate Business Platform</title>
+
+    <!-- ========== Favicon Icon ========== -->
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+
+    <!-- ========== Google Fonts: Plus Jakarta Sans & Outfit ========== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- ========== Start Stylesheet ========== -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/flaticon-business-set.css">
+    <!-- ========== End Stylesheet ========== -->
+
+    <style>
+        :root {
+            --primary: #0056b3;
+            --primary-dark: #0f2239;
+            --sidebar-bg: #0f2239;
+            --sidebar-color: #cbd5e1;
+            --sidebar-active-bg: #0056b3;
+            --sidebar-hover-bg: #1a365d;
+            --body-bg: #f8fafc;
+            --card-border: #cbd5e1;
+        }
+
+        body {
+            background-color: var(--body-bg);
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: clip;
+            color: #334155;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5, h6, .fw-bold {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            letter-spacing: -0.02em;
+        }
+
+        button, input, select, textarea, .btn {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        /* Buttons Border Radius Enhancement */
+        .btn {
+            border-radius: 10px !important;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .btn-sm {
+            border-radius: 8px !important;
+            padding: 6px 14px;
+        }
+
+        .btn.rounded-circle {
+            border-radius: 50% !important;
+        }
+
+        .btn-group .btn {
+            border-radius: 0 !important;
+        }
+
+        .btn-group .btn:first-child {
+            border-top-left-radius: 8px !important;
+            border-bottom-left-radius: 8px !important;
+        }
+
+        .btn-group .btn:last-child {
+            border-top-right-radius: 8px !important;
+            border-bottom-right-radius: 8px !important;
+        }
+
+        .role-switcher-select {
+            border-radius: 8px !important;
+        }
+
+        .sidebar-toggle-btn {
+            border-radius: 8px !important;
+        }
+
+        /* Layout */
+        .dashboard-wrapper {
+            display: flex;
+            min-height: 100vh;
+            width: 100%;
+        }
+
+        /* Sidebar - Fixed Left (Never scrolls with the page) */
+        .sidebar {
+            width: 260px;
+            background-color: var(--sidebar-bg);
+            color: var(--sidebar-color);
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+            z-index: 1050;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            height: 100vh;
+            max-height: 100vh;
+            overflow: hidden;
+        }
+
+        .sidebar-brand {
+            padding: 20px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .sidebar-brand img {
+            max-height: 36px;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            padding: 12px 10px;
+            margin: 0;
+            flex-grow: 1;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+        }
+
+        .sidebar-menu::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .sidebar-menu::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+        }
+
+        .sidebar-heading {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #64748b;
+            padding: 10px 12px 6px;
+            font-weight: 700;
+        }
+
+        .sidebar-menu li {
+            margin-bottom: 3px;
+        }
+
+        .sidebar-menu a {
+            display: flex;
+            align-items: center;
+            padding: 9px 12px;
+            color: var(--sidebar-color);
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .sidebar-menu a i {
+            width: 22px;
+            font-size: 15px;
+            margin-right: 10px;
+            text-align: center;
+            color: #94a3b8;
+        }
+
+        .sidebar-menu a:hover {
+            background-color: var(--sidebar-hover-bg);
+            color: #ffffff;
+        }
+
+        .sidebar-menu a:hover i {
+            color: #ffffff;
+        }
+
+        .sidebar-menu li.active a {
+            background-color: var(--sidebar-active-bg);
+            color: #ffffff;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(0, 86, 179, 0.3);
+        }
+
+        .sidebar-menu li.active a i {
+            color: #ffffff;
+        }
+
+        .sidebar-badge {
+            margin-left: auto;
+            font-size: 10px;
+            padding: 2px 7px;
+            border-radius: 12px;
+        }
+
+        .sidebar-footer {
+            padding: 14px 18px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(0, 0, 0, 0.15);
+        }
+
+        .sidebar-user {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .sidebar-user-avatar {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+
+        .sidebar-user-info h6 {
+            margin: 0;
+            font-size: 13px;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .sidebar-user-info small {
+            font-size: 11px;
+            color: #94a3b8;
+            text-transform: capitalize;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            background-color: #f8fafc;
+            min-height: 100vh;
+            margin-left: 260px;
+            width: calc(100% - 260px);
+        }
+
+        /* Topbar */
+        .topbar {
+            height: 65px;
+            background-color: #ffffff;
+            border-bottom: 1px solid var(--card-border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 1050;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+        }
+
+        .topbar-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .topbar-brand {
+            display: none;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .topbar-logo {
+            height: 26px;
+            max-height: 26px;
+            width: auto;
+            display: block;
+        }
+
+        .welcome-user-card {
+            background: #ffffff;
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 18px 22px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+            transition: all 0.2s ease;
+        }
+
+        .topbar-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .sidebar-toggle-btn {
+            background: none;
+            border: 1px solid var(--card-border);
+            border-radius: 6px;
+            padding: 6px 10px;
+            color: #475569;
+            cursor: pointer;
+            display: none;
+        }
+
+        .sidebar-toggle-btn:hover {
+            background-color: #f1f5f9;
+        }
+
+        .role-switcher-select {
+            padding: 5px 10px;
+            border-radius: 6px;
+            border: 1px solid var(--card-border);
+            font-size: 12px;
+            font-weight: 600;
+            background-color: #f1f5f9;
+            color: #0f2239;
+            cursor: pointer;
+        }
+
+        /* Dashboard Body */
+        .content-body {
+            padding: 24px;
+            flex-grow: 1;
+        }
+
+        /* Dashboard Section Container */
+        .dashboard-section {
+            display: none;
+            animation: fadeIn 0.25s ease-in-out;
+        }
+
+        .dashboard-section.active-section {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Stat Card */
+        .stat-card {
+            background: #ffffff;
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            height: 100%;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .stat-info h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0f2239;
+            margin: 0 0 3px;
+        }
+
+        .stat-info p {
+            margin: 0;
+            color: #64748b;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .stat-trend {
+            font-size: 11px;
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        /* Section Card */
+        .dashboard-card {
+            background: #ffffff;
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+        }
+
+        .dashboard-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .dashboard-card-header h5 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 700;
+            color: #0f2239;
+        }
+
+        /* Mobile Backdrop */
+        .sidebar-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(15, 23, 42, 0.6);
+            z-index: 1040;
+            display: none;
+        }
+
+        /* Responsive Media Queries */
+        @media (max-width: 991.98px) {
+            .main-content {
+                margin-left: 0 !important;
+                width: 100% !important;
+            }
+
+            .sidebar {
+                position: fixed;
+                top: 0;
+                left: -280px;
+                bottom: 0;
+                width: 270px;
+                max-width: 85vw;
+                height: 100vh;
+                box-shadow: 4px 0 25px rgba(0, 0, 0, 0.35);
+                z-index: 1060;
+                transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            .sidebar.mobile-open {
+                left: 0;
+            }
+
+            .sidebar-backdrop {
+                z-index: 1055;
+                backdrop-filter: blur(2px);
+            }
+
+            .sidebar-backdrop.active {
+                display: block;
+            }
+
+            .sidebar-toggle-btn {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .topbar {
+                position: -webkit-sticky !important;
+                position: sticky !important;
+                top: 0 !important;
+                z-index: 1050 !important;
+                background-color: #ffffff !important;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06) !important;
+                padding: 0 16px;
+            }
+
+            .topbar-brand {
+                display: inline-flex !important;
+                align-items: center !important;
+            }
+
+            .sidebar-toggle-btn {
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                width: 38px !important;
+                height: 38px !important;
+                padding: 0 !important;
+                border-radius: 8px !important;
+                font-size: 15px !important;
+                background-color: #f8fafc !important;
+            }
+
+            .welcome-user-card {
+                padding: 16px 14px;
+                border-radius: 10px;
+                margin-bottom: 16px;
+            }
+
+            .content-body {
+                padding: 16px;
+            }
+
+            .sidebar-close-btn {
+                display: block !important;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .border-end {
+                border-right: none !important;
+                border-bottom: 1px solid var(--card-border) !important;
+                padding-bottom: 16px;
+                margin-bottom: 16px;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .topbar {
+                position: -webkit-sticky !important;
+                position: sticky !important;
+                top: 0 !important;
+                z-index: 1050 !important;
+                background-color: #ffffff !important;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06) !important;
+                height: 58px;
+                padding: 0 12px;
+            }
+
+            .topbar-left {
+                gap: 8px;
+                min-width: 0;
+            }
+
+            .welcome-user-card h3 {
+                font-size: 20px !important;
+            }
+
+            .topbar-right {
+                gap: 6px;
+                flex-shrink: 0;
+            }
+
+            .role-switcher-select {
+                font-size: 11px;
+                padding: 4px 6px;
+                max-width: 105px;
+            }
+
+            .sidebar-toggle-btn {
+                padding: 5px 8px;
+                font-size: 13px;
+            }
+
+            .content-body {
+                padding: 14px 10px;
+            }
+
+            .dashboard-card {
+                padding: 14px 12px;
+                border-radius: 10px;
+                margin-bottom: 14px;
+            }
+
+            .dashboard-card-header {
+                flex-direction: column;
+                align-items: flex-start !important;
+                gap: 10px;
+            }
+
+            .dashboard-card-header > * {
+                width: 100%;
+            }
+
+            .dashboard-card-header input {
+                max-width: 100% !important;
+            }
+
+            .dashboard-card-header .btn-group,
+            .dashboard-card-header .d-flex {
+                width: 100%;
+                justify-content: flex-start;
+            }
+
+            .stat-card {
+                padding: 14px 14px;
+            }
+
+            .stat-info h3 {
+                font-size: 20px;
+            }
+
+            .stat-icon {
+                width: 42px;
+                height: 42px;
+                font-size: 17px;
+            }
+
+            /* Section headers on mobile */
+            .dashboard-section > .d-flex.flex-wrap {
+                flex-direction: column;
+                align-items: flex-start !important;
+                gap: 12px;
+                margin-bottom: 16px !important;
+            }
+
+            .dashboard-section > .d-flex.flex-wrap > div:last-child {
+                width: 100%;
+                display: flex;
+                gap: 8px;
+            }
+
+            .dashboard-section > .d-flex.flex-wrap > div:last-child .btn {
+                flex: 1;
+                margin: 0 !important;
+                font-size: 12px;
+                padding: 8px 10px;
+                text-align: center;
+                justify-content: center;
+                display: inline-flex;
+                align-items: center;
+            }
+
+            .table-responsive {
+                -webkit-overflow-scrolling: touch;
+                border-radius: 6px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .sidebar-close-btn {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="dashboard-wrapper">
+
+        <!-- Mobile Backdrop -->
+        <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+        <!-- Start Sidebar (10 Pages / Modules) -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <a href="index.html">
+                    <img src="images/logo-stackly-light.png" alt="Stackly" style="max-height: 38px;">
+                </a>
+                <button type="button" class="btn btn-sm btn-dark text-white sidebar-close-btn" id="sidebarCloseBtn" style="display: none; background: transparent; border: none; font-size: 18px;">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <!-- Sidebar Navigation -->
+            <ul class="sidebar-menu">
+                <div class="sidebar-heading">Navigation</div>
+
+                <!-- Overview -->
+                <li class="sidebar-item active" data-target="sec-overview">
+                    <a href="#overview">
+                        <i class="fas fa-th-large"></i>
+                        <span>Overview</span>
+                    </a>
+                </li>
+
+                <!-- Users Management -->
+                <li class="sidebar-item" data-target="sec-users">
+                    <a href="#users">
+                        <i class="fas fa-users"></i>
+                        <span>Users & Team</span>
+                    </a>
+                </li>
+
+                <!-- Projects & Tasks -->
+                <li class="sidebar-item" data-target="sec-projects">
+                    <a href="#projects">
+                        <i class="fas fa-tasks"></i>
+                        <span>Projects & Tasks</span>
+                    </a>
+                </li>
+
+                <!-- Analytics & Reports -->
+                <li class="sidebar-item" data-target="sec-analytics">
+                    <a href="#analytics">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Analytics</span>
+                    </a>
+                </li>
+
+                <!-- Finance & Invoices -->
+                <li class="sidebar-item" data-target="sec-finance">
+                    <a href="#finance">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                        <span>Finance & Billing</span>
+                    </a>
+                </li>
+
+                <!-- Messages & Inbox -->
+                <li class="sidebar-item" data-target="sec-messages">
+                    <a href="#messages">
+                        <i class="fas fa-envelope"></i>
+                        <span>Messages</span>
+                    </a>
+                </li>
+
+                <!-- Schedule & Calendar -->
+                <li class="sidebar-item" data-target="sec-calendar">
+                    <a href="#calendar">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Calendar & Events</span>
+                    </a>
+                </li>
+
+                <!-- Services & Catalog -->
+                <li class="sidebar-item" data-target="sec-services">
+                    <a href="#services">
+                        <i class="fas fa-cubes"></i>
+                        <span>Services Catalog</span>
+                    </a>
+                </li>
+
+                <!-- Security & Settings -->
+                <li class="sidebar-item" data-target="sec-settings">
+                    <a href="#settings">
+                        <i class="fas fa-cogs"></i>
+                        <span>System Settings</span>
+                    </a>
+                </li>
+
+                <!-- Help & Support -->
+                <li class="sidebar-item" data-target="sec-help">
+                    <a href="#help">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Help & Support</span>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Sidebar User Profile & Bottom Action -->
+            <div class="sidebar-footer">
+                <div class="sidebar-user">
+                    <div class="sidebar-user-avatar" id="sidebarAvatar">A</div>
+                    <div class="sidebar-user-info">
+                        <h6 id="sidebarUserName">Admin User</h6>
+                        <small id="sidebarUserRole" class="badge bg-info text-dark">ADMIN</small>
+                    </div>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-danger btn-sm w-100 d-flex align-items-center justify-content-center" onclick="BuskeyAuth.logout();" title="Log out of session">
+                        <i class="fas fa-sign-out-alt me-2"></i> Logout
+                    </button>
+                </div>
+            </div>
+        </aside>
+        <!-- End Sidebar -->
+
+        <!-- Start Main Content -->
+        <main class="main-content">
+            
+            <!-- Topbar Header -->
+            <header class="topbar">
+                <div class="topbar-left">
+                    <!-- Mobile Logo on Left Side End -->
+                    <a href="index.html" class="topbar-brand" title="Stackly Home">
+                        <img src="images/logo-stackly.png" alt="Stackly" class="topbar-logo">
+                    </a>
+                    <!-- Desktop Header Info -->
+                    <div class="d-none d-lg-block">
+                        <h6 class="mb-0 fw-bold text-dark" id="topbarGreeting">Platform Operations</h6>
+                        <small class="text-muted" id="currentDateDisplay">Management Workspace</small>
+                    </div>
+                </div>
+                <div class="topbar-right">
+                    <button type="button" class="sidebar-toggle-btn" id="sidebarToggleBtn" aria-label="Toggle Navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Dashboard Content Body -->
+            <div class="content-body">
+
+                <!-- Welcome Greeting Banner (Moved from nav into page) -->
+                <div class="welcome-user-card mb-4">
+                    <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+                        <div>
+                            <h3 class="fw-bold mb-1 text-dark" id="pageGreeting">Hello, <span class="user-greeting-name">Saravanan</span> <span class="wave-emoji" style="display:inline-block;">👋</span></h3>
+                            <p class="text-muted mb-0" id="pageGreetingSubtitle">Welcome back to your corporate dashboard.</p>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 px-3 py-2 fw-semibold text-uppercase" id="pageRoleBadge">Administrator</span>
+                            <div class="d-none d-sm-flex align-items-center gap-2 text-muted small ms-2 ps-2 border-start">
+                                <i class="far fa-calendar-alt text-primary"></i>
+                                <span id="pageCurrentDateDisplay">Platform Operations</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ==============================================
+                     1. SECTION: OVERVIEW (Default)
+                     ============================================== -->
+                <section id="sec-overview" class="dashboard-section active-section">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+                        <div>
+                            <h4 class="fw-bold mb-1" id="roleTitleHeader">Administrator Control Center</h4>
+                            <p class="text-muted mb-0" id="roleSubtitleHeader">Manage corporate infrastructure, security, team operations, and system health.</p>
+                        </div>
+                        <div class="mt-2 mt-sm-0">
+                            <a href="404.html" class="btn btn-primary" id="primaryActionBtn">
+                                <i class="fas fa-plus-circle me-2"></i> Add New Record
+                            </a>
+                            <a href="404.html" class="btn btn-outline-secondary ms-2" id="secondaryActionBtn">
+                                <i class="fas fa-download me-2"></i> Export Report
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Stat Cards Grid -->
+                    <div class="row g-3 mb-4" id="statsContainer">
+                        <div class="col-sm-6 col-xl-3">
+                            <div class="stat-card">
+                                <div class="stat-info">
+                                    <p>Total Revenue</p>
+                                    <h3>$148,250</h3>
+                                    <div class="stat-trend text-success"><i class="fas fa-arrow-up"></i> +14.2% vs last mo</div>
+                                </div>
+                                <div class="stat-icon bg-primary bg-opacity-10 text-primary"><i class="fas fa-dollar-sign"></i></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xl-3">
+                            <div class="stat-card">
+                                <div class="stat-info">
+                                    <p>Registered Users</p>
+                                    <h3>2,845</h3>
+                                    <div class="stat-trend text-success"><i class="fas fa-arrow-up"></i> +8.1% new signups</div>
+                                </div>
+                                <div class="stat-icon bg-info bg-opacity-10 text-info"><i class="fas fa-users"></i></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xl-3">
+                            <div class="stat-card">
+                                <div class="stat-info">
+                                    <p>Active Projects</p>
+                                    <h3>54</h3>
+                                    <div class="stat-trend text-primary"><i class="fas fa-check"></i> 12 due this week</div>
+                                </div>
+                                <div class="stat-icon bg-warning bg-opacity-10 text-warning"><i class="fas fa-briefcase"></i></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xl-3">
+                            <div class="stat-card">
+                                <div class="stat-info">
+                                    <p>Server Health</p>
+                                    <h3>99.98%</h3>
+                                    <div class="stat-trend text-success"><i class="fas fa-shield-alt"></i> Optimal Status</div>
+                                </div>
+                                <div class="stat-icon bg-success bg-opacity-10 text-success"><i class="fas fa-server"></i></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Operations & Charts Row -->
+                    <div class="row g-4 mb-4">
+                        <div class="col-lg-8">
+                            <div class="dashboard-card h-100">
+                                <div class="dashboard-card-header">
+                                    <h5>Live Activity & Performance</h5>
+                                    <div class="btn-group btn-group-sm">
+                                        <a href="404.html" class="btn btn-outline-secondary">Weekly</a>
+                                        <a href="404.html" class="btn btn-outline-secondary active">Monthly</a>
+                                        <a href="404.html" class="btn btn-outline-secondary">Yearly</a>
+                                    </div>
+                                </div>
+                                <div class="p-3 bg-light rounded text-center mb-3">
+                                    <div class="py-3">
+                                        <i class="fas fa-chart-area fa-3x text-primary mb-3"></i>
+                                        <h5 class="fw-bold">Business Metric Growth: +28.4%</h5>
+                                        <p class="text-muted small">Tracking live data streams, customer acquisition, and service utilization.</p>
+                                        <a href="404.html" class="btn btn-sm btn-primary">
+                                            <i class="fas fa-chart-line me-1"></i> Full Analytics Report
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row text-center g-2 pt-2">
+                                    <div class="col-4">
+                                        <h6 class="fw-bold text-success mb-0">+34.8%</h6>
+                                        <small class="text-muted">Target Met</small>
+                                    </div>
+                                    <div class="col-4">
+                                        <h6 class="fw-bold text-primary mb-0">99.98%</h6>
+                                        <small class="text-muted">Reliability</small>
+                                    </div>
+                                    <div class="col-4">
+                                        <h6 class="fw-bold text-dark mb-0">&lt; 140ms</h6>
+                                        <small class="text-muted">Avg Response</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="dashboard-card h-100">
+                                <div class="dashboard-card-header">
+                                    <h5>Quick Shortcuts</h5>
+                                    <span class="badge bg-secondary">Tools</span>
+                                </div>
+                                <div class="d-grid gap-2">
+                                    <a href="404.html" class="btn btn-outline-primary text-start py-2">
+                                        <i class="fas fa-user-plus me-2 text-primary"></i> Create User Account
+                                    </a>
+                                    <a href="404.html" class="btn btn-outline-primary text-start py-2">
+                                        <i class="fas fa-folder-plus me-2 text-primary"></i> Initiate New Project
+                                    </a>
+                                    <a href="404.html" class="btn btn-outline-primary text-start py-2">
+                                        <i class="fas fa-file-invoice me-2 text-primary"></i> Generate Invoice
+                                    </a>
+                                    <a href="404.html" class="btn btn-outline-primary text-start py-2">
+                                        <i class="fas fa-shield-alt me-2 text-primary"></i> Security Audit Log
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Operational Records Table -->
+                    <div class="dashboard-card">
+                        <div class="dashboard-card-header">
+                            <h5 id="tableTitle">Recent Operational Records</h5>
+                            <div class="d-flex gap-2">
+                                <a href="404.html" class="btn btn-sm btn-outline-secondary"><i class="fas fa-filter me-1"></i> Filter</a>
+                                <a href="404.html" class="btn btn-sm btn-primary"><i class="fas fa-external-link-alt me-1"></i> View All</a>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>ID / Name</th>
+                                        <th>Role / Category</th>
+                                        <th>Status</th>
+                                        <th>Date</th>
+                                        <th>Amount / Metric</th>
+                                        <th class="text-end">Actions (404)</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tableBody">
+                                    <tr>
+                                        <td><strong>Sarah Connor</strong><br><small class="text-muted">sarah@buskey.com</small></td>
+                                        <td><span class="badge bg-danger">ADMIN</span></td>
+                                        <td><span class="badge bg-success">Active</span></td>
+                                        <td>Today, 10:45 AM</td>
+                                        <td>Root Access</td>
+                                        <td class="text-end">
+                                            <a href="404.html" class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i> Edit</a>
+                                            <a href="404.html" class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Robert Chen</strong><br><small class="text-muted">robert@buskey.com</small></td>
+                                        <td><span class="badge bg-info">MANAGER</span></td>
+                                        <td><span class="badge bg-success">Active</span></td>
+                                        <td>Yesterday, 04:12 PM</td>
+                                        <td>Operations</td>
+                                        <td class="text-end">
+                                            <a href="404.html" class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i> Edit</a>
+                                            <a href="404.html" class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Emily Watson</strong><br><small class="text-muted">emily@client.com</small></td>
+                                        <td><span class="badge bg-secondary">CLIENT</span></td>
+                                        <td><span class="badge bg-success">Active</span></td>
+                                        <td>Oct 01, 2026</td>
+                                        <td>Enterprise Plan</td>
+                                        <td class="text-end">
+                                            <a href="404.html" class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i> Edit</a>
+                                            <a href="404.html" class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Alex Morgan</strong><br><small class="text-muted">alex@client.com</small></td>
+                                        <td><span class="badge bg-secondary">CLIENT</span></td>
+                                        <td><span class="badge bg-success">Active</span></td>
+                                        <td>Sep 29, 2026</td>
+                                        <td>Financial Consulting</td>
+                                        <td class="text-end">
+                                            <a href="404.html" class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i> Edit</a>
+                                            <a href="404.html" class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>David Kim</strong><br><small class="text-muted">david@buskey.com</small></td>
+                                        <td><span class="badge bg-info">MANAGER</span></td>
+                                        <td><span class="badge bg-warning text-dark">Review</span></td>
+                                        <td>Sep 28, 2026</td>
+                                        <td>Cloud DevOps Squad</td>
+                                        <td class="text-end">
+                                            <a href="404.html" class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i> Edit</a>
+                                            <a href="404.html" class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ==============================================
+                     2. SECTION: USERS & TEAM
+                     ============================================== -->
+                <section id="sec-users" class="dashboard-section">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+                        <div>
+                            <h4 class="fw-bold mb-1">Users & Team Directory</h4>
+                            <p class="text-muted mb-0">Manage employee accounts, client permissions, and access privileges.</p>
+                        </div>
+                        <div class="mt-2 mt-sm-0">
+                            <a href="404.html" class="btn btn-primary"><i class="fas fa-user-plus me-2"></i> Add New Member</a>
+                            <a href="404.html" class="btn btn-outline-secondary ms-2"><i class="fas fa-file-export me-2"></i> Export Users</a>
+                        </div>
+                    </div>
+
+                    <!-- User Directory Table Card -->
+                    <div class="dashboard-card">
+                        <div class="dashboard-card-header">
+                            <div class="d-flex gap-2 flex-wrap">
+                                <span class="badge bg-primary p-2">All Users (2,845)</span>
+                                <span class="badge bg-danger p-2">Admins (6)</span>
+                                <span class="badge bg-info p-2">Managers (14)</span>
+                                <span class="badge bg-secondary p-2">Clients (2,825)</span>
+                            </div>
+                            <input type="text" class="form-control form-control-sm" placeholder="Search users..." style="max-width: 200px;">
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>User Profile</th>
+                                        <th>Role</th>
+                                        <th>Department</th>
+                                        <th>Status</th>
+                                        <th>Joined Date</th>
+                                        <th class="text-end">Actions (404)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center me-2 fw-bold" style="width: 32px; height: 32px;">SC</div>
+                                                <div><strong>Sarah Connor</strong><br><small class="text-muted">sarah@buskey.com</small></div>
+                                            </div>
+                                        </td>
+                                        <td><span class="badge bg-danger">ADMIN</span></td>
+                                        <td>Executive Operations</td>
+                                        <td><span class="badge bg-success">Active</span></td>
+                                        <td>Jan 12, 2025</td>
+                                        <td class="text-end">
+                                            <a href="404.html" class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i> Edit</a>
+                                            <a href="404.html" class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="rounded-circle bg-info text-white d-flex align-items-center justify-content-center me-2 fw-bold" style="width: 32px; height: 32px;">RC</div>
+                                                <div><strong>Robert Chen</strong><br><small class="text-muted">robert@buskey.com</small></div>
+                                            </div>
+                                        </td>
+                                        <td><span class="badge bg-info">MANAGER</span></td>
+                                        <td>Project Delivery</td>
+                                        <td><span class="badge bg-success">Active</span></td>
+                                        <td>Mar 05, 2025</td>
+                                        <td class="text-end">
+                                            <a href="404.html" class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i> Edit</a>
+                                            <a href="404.html" class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="rounded-circle bg-success text-white d-flex align-items-center justify-content-center me-2 fw-bold" style="width: 32px; height: 32px;">EW</div>
+                                                <div><strong>Emily Watson</strong><br><small class="text-muted">emily@client.com</small></div>
+                                            </div>
+                                        </td>
+                                        <td><span class="badge bg-secondary">CLIENT</span></td>
+                                        <td>Apex Investments</td>
+                                        <td><span class="badge bg-success">Active</span></td>
+                                        <td>Oct 01, 2026</td>
+                                        <td class="text-end">
+                                            <a href="404.html" class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i> Edit</a>
+                                            <a href="404.html" class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="rounded-circle bg-warning text-dark d-flex align-items-center justify-content-center me-2 fw-bold" style="width: 32px; height: 32px;">MK</div>
+                                                <div><strong>Michael Kumar</strong><br><small class="text-muted">michael@techcorp.com</small></div>
+                                            </div>
+                                        </td>
+                                        <td><span class="badge bg-secondary">CLIENT</span></td>
+                                        <td>TechCorp Inc</td>
+                                        <td><span class="badge bg-success">Active</span></td>
+                                        <td>Sep 14, 2026</td>
+                                        <td class="text-end">
+                                            <a href="404.html" class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i> Edit</a>
+                                            <a href="404.html" class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ==============================================
+                     3. SECTION: PROJECTS & TASKS
+                     ============================================== -->
+                <section id="sec-projects" class="dashboard-section">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+                        <div>
+                            <h4 class="fw-bold mb-1">Projects & Tasks Workspace</h4>
+                            <p class="text-muted mb-0">Track corporate deliverables, task milestones, team allocation, and deadlines.</p>
+                        </div>
+                        <div class="mt-2 mt-sm-0">
+                            <a href="404.html" class="btn btn-primary"><i class="fas fa-plus-circle me-2"></i> New Project</a>
+                            <a href="404.html" class="btn btn-outline-secondary ms-2"><i class="fas fa-tasks me-2"></i> Assign Task</a>
+                        </div>
+                    </div>
+
+                    <!-- Project Cards Grid -->
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6 col-xl-3">
+                            <div class="dashboard-card h-100">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-success">In Progress</span>
+                                    <small class="text-muted">Due Oct 15</small>
+                                </div>
+                                <h6 class="fw-bold">Financial Portal Revamp</h6>
+                                <p class="text-muted small">Banking API integration and frontend redesign for high-frequency trading.</p>
+                                <div class="d-flex justify-content-between text-muted small mb-1">
+                                    <span>Progress</span>
+                                    <strong>85%</strong>
+                                </div>
+                                <div class="progress mb-3" style="height: 6px;">
+                                    <div class="progress-bar bg-primary" style="width: 85%"></div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small class="fw-bold text-primary">$42,000 Budget</small>
+                                    <a href="404.html" class="btn btn-sm btn-outline-primary">Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xl-3">
+                            <div class="dashboard-card h-100">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-warning text-dark">Review</span>
+                                    <small class="text-muted">Due Oct 18</small>
+                                </div>
+                                <h6 class="fw-bold">Corporate Brand Identity</h6>
+                                <p class="text-muted small">Updated brand guidelines, stationery, pitch decks, and digital asset kit.</p>
+                                <div class="d-flex justify-content-between text-muted small mb-1">
+                                    <span>Progress</span>
+                                    <strong>90%</strong>
+                                </div>
+                                <div class="progress mb-3" style="height: 6px;">
+                                    <div class="progress-bar bg-warning" style="width: 90%"></div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small class="fw-bold text-primary">$18,500 Budget</small>
+                                    <a href="404.html" class="btn btn-sm btn-outline-primary">Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xl-3">
+                            <div class="dashboard-card h-100">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-info">Active</span>
+                                    <small class="text-muted">Due Nov 05</small>
+                                </div>
+                                <h6 class="fw-bold">Cloud Migration Phase 2</h6>
+                                <p class="text-muted small">Containerizing legacy database workloads to Kubernetes infrastructure.</p>
+                                <div class="d-flex justify-content-between text-muted small mb-1">
+                                    <span>Progress</span>
+                                    <strong>45%</strong>
+                                </div>
+                                <div class="progress mb-3" style="height: 6px;">
+                                    <div class="progress-bar bg-info" style="width: 45%"></div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small class="fw-bold text-primary">$68,000 Budget</small>
+                                    <a href="404.html" class="btn btn-sm btn-outline-primary">Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xl-3">
+                            <div class="dashboard-card h-100">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-primary">Planning</span>
+                                    <small class="text-muted">Due Nov 20</small>
+                                </div>
+                                <h6 class="fw-bold">Enterprise CRM Integration</h6>
+                                <p class="text-muted small">Syncing Salesforce pipelines with ERP accounting and billing systems.</p>
+                                <div class="d-flex justify-content-between text-muted small mb-1">
+                                    <span>Progress</span>
+                                    <strong>60%</strong>
+                                </div>
+                                <div class="progress mb-3" style="height: 6px;">
+                                    <div class="progress-bar bg-success" style="width: 60%"></div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small class="fw-bold text-primary">$34,000 Budget</small>
+                                    <a href="404.html" class="btn btn-sm btn-outline-primary">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ==============================================
+                     4. SECTION: ANALYTICS
+                     ============================================== -->
+                <section id="sec-analytics" class="dashboard-section">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+                        <div>
+                            <h4 class="fw-bold mb-1">Analytics & Business Intelligence</h4>
+                            <p class="text-muted mb-0">Live visitor demographics, revenue forecasting, and KPI tracking.</p>
+                        </div>
+                        <div class="mt-2 mt-sm-0">
+                            <a href="404.html" class="btn btn-primary"><i class="fas fa-file-download me-2"></i> Export Metrics</a>
+                        </div>
+                    </div>
+
+                    <div class="row g-3 mb-4">
+                        <div class="col-sm-6 col-xl-3">
+                            <div class="stat-card">
+                                <div class="stat-info">
+                                    <p>Monthly Visits</p>
+                                    <h3>142,500</h3>
+                                    <div class="stat-trend text-success"><i class="fas fa-arrow-up"></i> +12.4% vs last mo</div>
+                                </div>
+                                <div class="stat-icon bg-primary bg-opacity-10 text-primary"><i class="fas fa-chart-line"></i></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xl-3">
+                            <div class="stat-card">
+                                <div class="stat-info">
+                                    <p>Conversion Rate</p>
+                                    <h3>4.82%</h3>
+                                    <div class="stat-trend text-success"><i class="fas fa-arrow-up"></i> +0.6% increase</div>
+                                </div>
+                                <div class="stat-icon bg-success bg-opacity-10 text-success"><i class="fas fa-percentage"></i></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xl-3">
+                            <div class="stat-card">
+                                <div class="stat-info">
+                                    <p>Avg Session Duration</p>
+                                    <h3>4m 32s</h3>
+                                    <div class="stat-trend text-primary"><i class="fas fa-clock"></i> High engagement</div>
+                                </div>
+                                <div class="stat-icon bg-info bg-opacity-10 text-info"><i class="fas fa-stopwatch"></i></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xl-3">
+                            <div class="stat-card">
+                                <div class="stat-info">
+                                    <p>Avg API Latency</p>
+                                    <h3>118ms</h3>
+                                    <div class="stat-trend text-success"><i class="fas fa-bolt"></i> Excellent speed</div>
+                                </div>
+                                <div class="stat-icon bg-warning bg-opacity-10 text-warning"><i class="fas fa-tachometer-alt"></i></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <div class="dashboard-card-header">
+                            <h5>Traffic Acquisition Breakdown</h5>
+                            <a href="404.html" class="btn btn-sm btn-outline-primary">Full Breakdown</a>
+                        </div>
+                        <div class="row g-4 align-items-center">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between mb-1"><span>Organic Search</span><strong>48%</strong></div>
+                                    <div class="progress" style="height: 8px;"><div class="progress-bar bg-primary" style="width: 48%"></div></div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between mb-1"><span>Direct Traffic</span><strong>28%</strong></div>
+                                    <div class="progress" style="height: 8px;"><div class="progress-bar bg-info" style="width: 28%"></div></div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between mb-1"><span>Referral & Partnerships</span><strong>14%</strong></div>
+                                    <div class="progress" style="height: 8px;"><div class="progress-bar bg-success" style="width: 14%"></div></div>
+                                </div>
+                                <div>
+                                    <div class="d-flex justify-content-between mb-1"><span>Social Campaigns</span><strong>10%</strong></div>
+                                    <div class="progress" style="height: 8px;"><div class="progress-bar bg-warning" style="width: 10%"></div></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 text-center">
+                                <div class="p-4 bg-light rounded">
+                                    <h2 class="fw-bold text-primary mb-1">$2.4M</h2>
+                                    <p class="text-muted mb-3">Projected Annual Run-Rate (ARR)</p>
+                                    <a href="404.html" class="btn btn-sm btn-primary">Generate Forecast Model</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ==============================================
+                     5. SECTION: FINANCE & BILLING
+                     ============================================== -->
+                <section id="sec-finance" class="dashboard-section">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+                        <div>
+                            <h4 class="fw-bold mb-1">Finance & Billing Management</h4>
+                            <p class="text-muted mb-0">Review invoices, subscription payments, and tax statements.</p>
+                        </div>
+                        <div class="mt-2 mt-sm-0">
+                            <a href="404.html" class="btn btn-primary"><i class="fas fa-file-invoice-dollar me-2"></i> Create Invoice</a>
+                        </div>
+                    </div>
+
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-4">
+                            <div class="stat-card">
+                                <div class="stat-info">
+                                    <p>Total Revenue Billed</p>
+                                    <h3>$148,250</h3>
+                                    <div class="stat-trend text-success"><i class="fas fa-check"></i> 94% collected</div>
+                                </div>
+                                <div class="stat-icon bg-success bg-opacity-10 text-success"><i class="fas fa-wallet"></i></div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="stat-card">
+                                <div class="stat-info">
+                                    <p>Outstanding Receivables</p>
+                                    <h3>$8,420</h3>
+                                    <div class="stat-trend text-warning"><i class="fas fa-clock"></i> 3 invoices due</div>
+                                </div>
+                                <div class="stat-icon bg-warning bg-opacity-10 text-warning"><i class="fas fa-hourglass-half"></i></div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="stat-card">
+                                <div class="stat-info">
+                                    <p>Operating Margin</p>
+                                    <h3>62.1%</h3>
+                                    <div class="stat-trend text-primary"><i class="fas fa-arrow-up"></i> +4.5% efficiency</div>
+                                </div>
+                                <div class="stat-icon bg-primary bg-opacity-10 text-primary"><i class="fas fa-piggy-bank"></i></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <div class="dashboard-card-header">
+                            <h5>Recent Corporate Invoices</h5>
+                            <a href="404.html" class="btn btn-sm btn-outline-primary">View All Invoices</a>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Invoice #</th>
+                                        <th>Client Name</th>
+                                        <th>Issue Date</th>
+                                        <th>Due Date</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                        <th class="text-end">Action (404)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>#INV-2026-089</strong></td>
+                                        <td>Apex Investments Ltd</td>
+                                        <td>Oct 01, 2026</td>
+                                        <td>Oct 15, 2026</td>
+                                        <td><strong>$3,200.00</strong></td>
+                                        <td><span class="badge bg-success">Paid</span></td>
+                                        <td class="text-end"><a href="404.html" class="btn btn-sm btn-outline-primary"><i class="fas fa-download"></i> PDF</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>#INV-2026-088</strong></td>
+                                        <td>TechCorp Systems Inc</td>
+                                        <td>Sep 28, 2026</td>
+                                        <td>Oct 12, 2026</td>
+                                        <td><strong>$4,500.00</strong></td>
+                                        <td><span class="badge bg-warning text-dark">Pending</span></td>
+                                        <td class="text-end"><a href="404.html" class="btn btn-sm btn-outline-primary"><i class="fas fa-download"></i> PDF</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>#INV-2026-087</strong></td>
+                                        <td>Global Logistics Co</td>
+                                        <td>Sep 20, 2026</td>
+                                        <td>Oct 05, 2026</td>
+                                        <td><strong>$2,100.00</strong></td>
+                                        <td><span class="badge bg-success">Paid</span></td>
+                                        <td class="text-end"><a href="404.html" class="btn btn-sm btn-outline-primary"><i class="fas fa-download"></i> PDF</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ==============================================
+                     6. SECTION: MESSAGES
+                     ============================================== -->
+                <section id="sec-messages" class="dashboard-section">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+                        <div>
+                            <h4 class="fw-bold mb-1">Messages & Communications</h4>
+                            <p class="text-muted mb-0">Direct client conversations, internal announcements, and inquiry inbox.</p>
+                        </div>
+                        <div class="mt-2 mt-sm-0">
+                            <a href="404.html" class="btn btn-primary"><i class="fas fa-paper-plane me-2"></i> Compose Message</a>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <div class="row g-0">
+                            <div class="col-md-5 border-end pe-md-3">
+                                <h6 class="fw-bold mb-3">Conversations (3 Unread)</h6>
+                                <div class="list-group list-group-flush">
+                                    <a href="404.html" class="list-group-item list-group-item-action active rounded mb-1">
+                                        <div class="d-flex justify-content-between">
+                                            <strong>Emily Watson (Client)</strong>
+                                            <small>10:45 AM</small>
+                                        </div>
+                                        <small class="d-block text-truncate">Please review the financial consulting draft...</small>
+                                    </a>
+                                    <a href="404.html" class="list-group-item list-group-item-action rounded mb-1">
+                                        <div class="d-flex justify-content-between">
+                                            <strong>Robert Chen (Manager)</strong>
+                                            <small>Yesterday</small>
+                                        </div>
+                                        <small class="d-block text-truncate text-muted">DevOps migration sprint is 90% completed.</small>
+                                    </a>
+                                    <a href="404.html" class="list-group-item list-group-item-action rounded">
+                                        <div class="d-flex justify-content-between">
+                                            <strong>TechCorp Advisory</strong>
+                                            <small>Sep 28</small>
+                                        </div>
+                                        <small class="d-block text-truncate text-muted">Confirmed meeting for Q4 financial review.</small>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-7 ps-md-4 pt-3 pt-md-0">
+                                <div class="d-flex justify-content-between border-bottom pb-2 mb-3">
+                                    <div>
+                                        <h6 class="fw-bold mb-0">Emily Watson</h6>
+                                        <small class="text-muted">Chief Financial Officer, Apex Investments</small>
+                                    </div>
+                                    <a href="404.html" class="btn btn-sm btn-outline-secondary">Call Client</a>
+                                </div>
+                                <div class="p-3 bg-light rounded mb-3" style="max-height: 180px; overflow-y: auto;">
+                                    <p class="small mb-1"><strong>Emily:</strong> Hi Buskey team, we reviewed the preliminary Q4 portfolio strategy. Everything looks great!</p>
+                                    <p class="small mb-0 text-primary"><strong>You:</strong> Thank you Emily! The full tax assessment report will be uploaded by tomorrow.</p>
+                                </div>
+                                <div class="input-group">
+                                    <input type="text" class="form-control form-control-sm" placeholder="Type your reply...">
+                                    <a href="404.html" class="btn btn-primary btn-sm"><i class="fas fa-paper-plane"></i> Send</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ==============================================
+                     7. SECTION: CALENDAR & EVENTS
+                     ============================================== -->
+                <section id="sec-calendar" class="dashboard-section">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+                        <div>
+                            <h4 class="fw-bold mb-1">Calendar & Schedules</h4>
+                            <p class="text-muted mb-0">Executive client briefings, milestone deadlines, and board meetings.</p>
+                        </div>
+                        <div class="mt-2 mt-sm-0">
+                            <a href="404.html" class="btn btn-primary"><i class="fas fa-calendar-plus me-2"></i> Schedule Meeting</a>
+                        </div>
+                    </div>
+
+                    <div class="row g-3">
+                        <div class="col-md-6 col-lg-4">
+                            <div class="dashboard-card h-100 border-start border-4 border-primary">
+                                <div class="d-flex justify-content-between text-muted small mb-2">
+                                    <span>TODAY</span>
+                                    <span>02:30 PM - 03:30 PM</span>
+                                </div>
+                                <h6 class="fw-bold">Q4 Financial Strategy Briefing</h6>
+                                <p class="text-muted small">Conference Room A & Zoom Online Meeting with Apex Investments executive board.</p>
+                                <a href="404.html" class="btn btn-sm btn-outline-primary">Join Call</a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4">
+                            <div class="dashboard-card h-100 border-start border-4 border-info">
+                                <div class="d-flex justify-content-between text-muted small mb-2">
+                                    <span>TOMORROW</span>
+                                    <span>10:00 AM - 11:30 AM</span>
+                                </div>
+                                <h6 class="fw-bold">Cloud Migration Sprint Review</h6>
+                                <p class="text-muted small">Internal engineering sprint review with Robert Chen and DevOps squad leaders.</p>
+                                <a href="404.html" class="btn btn-sm btn-outline-primary">View Agenda</a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4">
+                            <div class="dashboard-card h-100 border-start border-4 border-warning">
+                                <div class="d-flex justify-content-between text-muted small mb-2">
+                                    <span>FRIDAY</span>
+                                    <span>04:00 PM - 05:00 PM</span>
+                                </div>
+                                <h6 class="fw-bold">Quarterly Business Tax Review</h6>
+                                <p class="text-muted small">Compliance audit and tax return sign-off with legal advisors.</p>
+                                <a href="404.html" class="btn btn-sm btn-outline-primary">View Documents</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ==============================================
+                     8. SECTION: SERVICES CATALOG
+                     ============================================== -->
+                <section id="sec-services" class="dashboard-section">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+                        <div>
+                            <h4 class="fw-bold mb-1">Services Catalog & Advisory Solutions</h4>
+                            <p class="text-muted mb-0">Browse corporate consulting tiers, enterprise packages, and specialized modules.</p>
+                        </div>
+                        <div class="mt-2 mt-sm-0">
+                            <a href="404.html" class="btn btn-primary"><i class="fas fa-plus-circle me-2"></i> Request Custom Plan</a>
+                        </div>
+                    </div>
+
+                    <div class="row g-3">
+                        <div class="col-md-6 col-xl-3">
+                            <div class="dashboard-card text-center h-100">
+                                <i class="fas fa-chart-pie fa-2x text-primary mb-2"></i>
+                                <h6 class="fw-bold">Financial Planning</h6>
+                                <h4 class="text-primary fw-bold my-2">$2,499<small class="text-muted fs-6">/mo</small></h4>
+                                <p class="text-muted small">Budget forecasting, corporate audit preparation, and cashflow optimization.</p>
+                                <a href="404.html" class="btn btn-sm btn-outline-primary w-100">Manage Service</a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xl-3">
+                            <div class="dashboard-card text-center h-100 border-primary">
+                                <span class="badge bg-primary mb-2">MOST POPULAR</span>
+                                <h6 class="fw-bold">Investment Strategy</h6>
+                                <h4 class="text-primary fw-bold my-2">$3,999<small class="text-muted fs-6">/mo</small></h4>
+                                <p class="text-muted small">Portfolio risk diversification, market analysis, and high-yield mutual funds.</p>
+                                <a href="404.html" class="btn btn-sm btn-primary w-100">Current Plan</a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xl-3">
+                            <div class="dashboard-card text-center h-100">
+                                <i class="fas fa-shield-alt fa-2x text-primary mb-2"></i>
+                                <h6 class="fw-bold">Risk & Compliance</h6>
+                                <h4 class="text-primary fw-bold my-2">$1,850<small class="text-muted fs-6">/mo</small></h4>
+                                <p class="text-muted small">Regulatory compliance, cybersecurity audit, and corporate governance.</p>
+                                <a href="404.html" class="btn btn-sm btn-outline-primary w-100">Add Module</a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xl-3">
+                            <div class="dashboard-card text-center h-100">
+                                <i class="fas fa-laptop-code fa-2x text-primary mb-2"></i>
+                                <h6 class="fw-bold">Digital Transformation</h6>
+                                <h4 class="text-primary fw-bold my-2">$4,500<small class="text-muted fs-6">/mo</small></h4>
+                                <p class="text-muted small">Cloud migration, enterprise ERP, and automated workflow pipelines.</p>
+                                <a href="404.html" class="btn btn-sm btn-outline-primary w-100">Add Module</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ==============================================
+                     9. SECTION: SETTINGS
+                     ============================================== -->
+                <section id="sec-settings" class="dashboard-section">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+                        <div>
+                            <h4 class="fw-bold mb-1">Platform & Security Settings</h4>
+                            <p class="text-muted mb-0">Update personal profile, security credentials, and organization preferences.</p>
+                        </div>
+                        <div class="mt-2 mt-sm-0">
+                            <a href="404.html" class="btn btn-primary"><i class="fas fa-save me-2"></i> Save Changes</a>
+                        </div>
+                    </div>
+
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="dashboard-card h-100">
+                                <h6 class="fw-bold mb-3"><i class="fas fa-user-edit text-primary me-2"></i> Profile Information</h6>
+                                <div class="mb-3">
+                                    <label class="form-label small fw-bold">Full Name</label>
+                                    <input type="text" class="form-control form-control-sm" id="settingsFullName" value="Saravanan">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label small fw-bold">Email Address</label>
+                                    <input type="email" class="form-control form-control-sm" id="settingsEmail" value="admin@buskey.com" readonly>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label small fw-bold">Organization / Company</label>
+                                    <input type="text" class="form-control form-control-sm" value="Buskey Corporate Services">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="dashboard-card h-100">
+                                <h6 class="fw-bold mb-3"><i class="fas fa-lock text-primary me-2"></i> Password & Security</h6>
+                                <div class="mb-3">
+                                    <label class="form-label small fw-bold">Current Password</label>
+                                    <input type="password" class="form-control form-control-sm" value="********" readonly>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label small fw-bold">New Password</label>
+                                    <input type="password" class="form-control form-control-sm" placeholder="Enter new password">
+                                </div>
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" id="twoFactorSwitch" checked>
+                                    <label class="form-check-label small" for="twoFactorSwitch">Two-Factor Authentication (2FA)</label>
+                                </div>
+                                <a href="404.html" class="btn btn-sm btn-outline-primary">Update Security Keys</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ==============================================
+                     10. SECTION: HELP & SUPPORT
+                     ============================================== -->
+                <section id="sec-help" class="dashboard-section">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+                        <div>
+                            <h4 class="fw-bold mb-1">Help Center & Support Desk</h4>
+                            <p class="text-muted mb-0">System documentation, common operational queries, and priority support.</p>
+                        </div>
+                        <div class="mt-2 mt-sm-0">
+                            <a href="404.html" class="btn btn-primary"><i class="fas fa-headset me-2"></i> Open Support Ticket</a>
+                        </div>
+                    </div>
+
+                    <div class="row g-4">
+                        <div class="col-lg-8">
+                            <div class="dashboard-card">
+                                <h6 class="fw-bold mb-3">Frequently Asked Questions</h6>
+                                <div class="accordion" id="helpAccordion">
+                                    <div class="accordion-item mb-2 border rounded">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                                How do I invite team members and assign roles?
+                                            </button>
+                                        </h2>
+                                        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
+                                            <div class="accordion-body small text-muted">
+                                                Navigate to the <strong>2. Users & Team</strong> tab in the sidebar and click "Add New Member". Specify their email, name, and choose between Admin, Manager, or Client roles.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item mb-2 border rounded">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                                Where can I download tax receipts and invoices?
+                                            </button>
+                                        </h2>
+                                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
+                                            <div class="accordion-body small text-muted">
+                                                In the <strong>5. Finance & Billing</strong> section, every transaction has a direct "Download PDF" action button for your official business accounting records.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item border rounded">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                                How can I switch my active dashboard view?
+                                            </button>
+                                        </h2>
+                                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
+                                            <div class="accordion-body small text-muted">
+                                                You can test the perspective of all 3 roles (Admin, Manager, or Client) anytime using the "Role" dropdown selector located at the top right of the topbar.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="dashboard-card text-center">
+                                <i class="fas fa-headset fa-3x text-primary mb-3"></i>
+                                <h6 class="fw-bold">24/7 Corporate Support</h6>
+                                <p class="text-muted small">Our enterprise consultants and technical support squad are ready to assist you.</p>
+                                <p class="fw-bold text-dark mb-1"><i class="fas fa-phone-alt me-1 text-primary"></i> +123 456 7890</p>
+                                <p class="small text-muted mb-3"><i class="fas fa-envelope me-1 text-primary"></i> support@buskey.com</p>
+                                <a href="404.html" class="btn btn-sm btn-primary w-100">Start Live Chat</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+        <!-- End Main Content -->
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/auth.js"></script>
+
+    <script>
+        // User session initialization with robust fallback
+        const currentUser = BuskeyAuth.getCurrentUser() || {
+            name: 'Saravanan',
+            email: 'saravanan@buskey.com',
+            role: 'admin'
+        };
+
+        const userName = currentUser.name || currentUser.email.split('@')[0];
+        const userRole = (currentUser.role || 'admin').toLowerCase();
+
+        if (document.getElementById('sidebarUserName')) document.getElementById('sidebarUserName').textContent = userName;
+        if (document.getElementById('sidebarAvatar')) document.getElementById('sidebarAvatar').textContent = userName.charAt(0).toUpperCase();
+        if (document.getElementById('sidebarUserRole')) document.getElementById('sidebarUserRole').textContent = userRole.toUpperCase();
+        if (document.getElementById('topbarGreeting')) document.getElementById('topbarGreeting').textContent = 'Platform Operations';
+        if (document.getElementById('pageGreeting')) document.getElementById('pageGreeting').innerHTML = 'Hello, ' + userName + ' <span class="wave-emoji" style="display:inline-block;">👋</span>';
+        if (document.getElementById('pageRoleBadge')) document.getElementById('pageRoleBadge').textContent = userRole.toUpperCase();
+        document.querySelectorAll('.user-greeting-name').forEach(el => el.textContent = userName);
+
+        const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const formattedDate = new Date().toLocaleDateString('en-US', dateOptions);
+        if (document.getElementById('pageCurrentDateDisplay')) {
+            document.getElementById('pageCurrentDateDisplay').textContent = formattedDate;
+        }
+
+        if (document.getElementById('settingsFullName')) {
+            document.getElementById('settingsFullName').value = userName;
+        }
+        if (document.getElementById('settingsEmail')) {
+            document.getElementById('settingsEmail').value = currentUser.email;
+        }
+
+        renderRoleView(userRole);
+
+        // Mobile Sidebar Drawer Toggle
+        const sidebar = document.getElementById('sidebar');
+        const backdrop = document.getElementById('sidebarBackdrop');
+        const toggleBtn = document.getElementById('sidebarToggleBtn');
+        const closeBtn = document.getElementById('sidebarCloseBtn');
+
+        function openSidebar() {
+            sidebar.classList.add('mobile-open');
+            backdrop.classList.add('active');
+        }
+
+        function closeSidebar() {
+            sidebar.classList.remove('mobile-open');
+            backdrop.classList.remove('active');
+        }
+
+        if (toggleBtn) toggleBtn.addEventListener('click', openSidebar);
+        if (closeBtn) closeBtn.addEventListener('click', closeSidebar);
+        if (backdrop) backdrop.addEventListener('click', closeSidebar);
+
+        // Sidebar Navigation Switcher Function
+        function showSection(sectionId) {
+            document.querySelectorAll('.dashboard-section').forEach(sec => {
+                sec.classList.remove('active-section');
+            });
+            
+            const target = document.getElementById(sectionId);
+            if (target) {
+                target.classList.add('active-section');
+            }
+
+            document.querySelectorAll('.sidebar-item').forEach(item => {
+                if (item.getAttribute('data-target') === sectionId) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+
+            closeSidebar();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Attach Click Listeners to 10 Sidebar Items
+        document.querySelectorAll('.sidebar-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('data-target');
+                const link = this.querySelector('a');
+                if (link) {
+                    const hash = link.getAttribute('href');
+                    if (hash && hash.startsWith('#')) {
+                        history.pushState(null, null, hash);
+                    }
+                }
+                showSection(targetId);
+            });
+        });
+
+        // Handle URL Hash navigation on load and back/forward
+        window.addEventListener('popstate', handleHashNavigation);
+        function handleHashNavigation() {
+            const hash = window.location.hash.replace('#', '').toLowerCase();
+            const map = {
+                'overview': 'sec-overview',
+                'users': 'sec-users',
+                'projects': 'sec-projects',
+                'analytics': 'sec-analytics',
+                'finance': 'sec-finance',
+                'messages': 'sec-messages',
+                'calendar': 'sec-calendar',
+                'services': 'sec-services',
+                'settings': 'sec-settings',
+                'help': 'sec-help'
+            };
+            const targetId = map[hash] || 'sec-overview';
+            showSection(targetId);
+        }
+
+        // Initial check
+        if (window.location.hash) {
+            handleHashNavigation();
+        }
+
+        // Switch role function from topbar selector
+        function switchRoleFromTop(role) {
+            BuskeyAuth.switchRole(role);
+        }
+
+        // Render role-specific data & stats in Overview
+        function renderRoleView(role) {
+            const statsContainer = document.getElementById('statsContainer');
+            const tableBody = document.getElementById('tableBody');
+            const roleTitle = document.getElementById('roleTitleHeader');
+            const roleSubtitle = document.getElementById('roleSubtitleHeader');
+            const primaryActionBtn = document.getElementById('primaryActionBtn');
+            const tableTitle = document.getElementById('tableTitle');
+
+            if (!statsContainer || !tableBody) return;
+
+            if (role === 'admin') {
+                roleTitle.textContent = "Administrator Control Center";
+                roleSubtitle.textContent = "Complete administrative overview, system security, server metrics, and user rights.";
+                primaryActionBtn.innerHTML = '<i class="fas fa-user-plus me-2"></i> Add Administrator';
+                tableTitle.textContent = "Global System Accounts & Audit Records";
+
+                statsContainer.innerHTML = `
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="stat-card">
+                            <div class="stat-info">
+                                <p>Total Revenue</p>
+                                <h3>$148,250</h3>
+                                <div class="stat-trend text-success"><i class="fas fa-arrow-up"></i> +14.2% vs last mo</div>
+                            </div>
+                            <div class="stat-icon bg-primary bg-opacity-10 text-primary"><i class="fas fa-dollar-sign"></i></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="stat-card">
+                            <div class="stat-info">
+                                <p>Registered Users</p>
+                                <h3>2,845</h3>
+                                <div class="stat-trend text-success"><i class="fas fa-arrow-up"></i> +8.1% new signups</div>
+                            </div>
+                            <div class="stat-icon bg-info bg-opacity-10 text-info"><i class="fas fa-users"></i></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="stat-card">
+                            <div class="stat-info">
+                                <p>Active Projects</p>
+                                <h3>54</h3>
+                                <div class="stat-trend text-primary"><i class="fas fa-check"></i> 12 due this week</div>
+                            </div>
+                            <div class="stat-icon bg-warning bg-opacity-10 text-warning"><i class="fas fa-briefcase"></i></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="stat-card">
+                            <div class="stat-info">
+                                <p>Server Health</p>
+                                <h3>99.98%</h3>
+                                <div class="stat-trend text-success"><i class="fas fa-shield-alt"></i> Optimal Status</div>
+                            </div>
+                            <div class="stat-icon bg-success bg-opacity-10 text-success"><i class="fas fa-server"></i></div>
+                        </div>
+                    </div>
+                `;
+
+                tableBody.innerHTML = `
+                    <tr>
+                        <td><strong>Sarah Connor</strong><br><small class="text-muted">sarah@buskey.com</small></td>
+                        <td><span class="badge bg-danger">ADMIN</span></td>
+                        <td><span class="badge bg-success">Active</span></td>
+                        <td>Today, 10:45 AM</td>
+                        <td>Root Access</td>
+                        <td class="text-end">
+                            <a href="404.html" class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i> Edit</a>
+                            <a href="404.html" class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Robert Chen</strong><br><small class="text-muted">robert@buskey.com</small></td>
+                        <td><span class="badge bg-info">MANAGER</span></td>
+                        <td><span class="badge bg-success">Active</span></td>
+                        <td>Yesterday, 04:12 PM</td>
+                        <td>Operations</td>
+                        <td class="text-end">
+                            <a href="404.html" class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i> Edit</a>
+                            <a href="404.html" class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Emily Watson</strong><br><small class="text-muted">emily@client.com</small></td>
+                        <td><span class="badge bg-secondary">CLIENT</span></td>
+                        <td><span class="badge bg-success">Active</span></td>
+                        <td>Oct 01, 2026</td>
+                        <td>Enterprise Plan</td>
+                        <td class="text-end">
+                            <a href="404.html" class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i> Edit</a>
+                            <a href="404.html" class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></a>
+                        </td>
+                    </tr>
+                `;
+
+            } else if (role === 'manager') {
+                roleTitle.textContent = "Operations & Project Manager Hub";
+                roleSubtitle.textContent = "Track team progress, deadlines, deliverable approvals, and operational milestones.";
+                primaryActionBtn.innerHTML = '<i class="fas fa-plus-circle me-2"></i> Create New Project';
+                tableTitle.textContent = "Active Corporate Projects & Deliverables";
+
+                statsContainer.innerHTML = `
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="stat-card">
+                            <div class="stat-info">
+                                <p>Team Members</p>
+                                <h3>38</h3>
+                                <div class="stat-trend text-primary"><i class="fas fa-users"></i> 4 Squads</div>
+                            </div>
+                            <div class="stat-icon bg-info bg-opacity-10 text-info"><i class="fas fa-user-friends"></i></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="stat-card">
+                            <div class="stat-info">
+                                <p>Ongoing Projects</p>
+                                <h3>18</h3>
+                                <div class="stat-trend text-success"><i class="fas fa-arrow-up"></i> On schedule</div>
+                            </div>
+                            <div class="stat-icon bg-primary bg-opacity-10 text-primary"><i class="fas fa-tasks"></i></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="stat-card">
+                            <div class="stat-info">
+                                <p>Milestones Done</p>
+                                <h3>87.4%</h3>
+                                <div class="stat-trend text-success"><i class="fas fa-check-circle"></i> High efficiency</div>
+                            </div>
+                            <div class="stat-icon bg-success bg-opacity-10 text-success"><i class="fas fa-award"></i></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="stat-card">
+                            <div class="stat-info">
+                                <p>Pending Reviews</p>
+                                <h3>7</h3>
+                                <div class="stat-trend text-warning"><i class="fas fa-clock"></i> Action required</div>
+                            </div>
+                            <div class="stat-icon bg-warning bg-opacity-10 text-warning"><i class="fas fa-exclamation-triangle"></i></div>
+                        </div>
+                    </div>
+                `;
+
+                tableBody.innerHTML = `
+                    <tr>
+                        <td><strong>Financial Portal Revamp</strong><br><small class="text-muted">Buskey Web Team</small></td>
+                        <td><span class="badge bg-info">Development</span></td>
+                        <td><span class="badge bg-success">In Progress</span></td>
+                        <td>Due: Oct 15</td>
+                        <td>85% Completed</td>
+                        <td class="text-end">
+                            <a href="404.html" class="btn btn-sm btn-outline-primary"><i class="fas fa-eye"></i> View</a>
+                            <a href="404.html" class="btn btn-sm btn-outline-success"><i class="fas fa-check"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Corporate Brand Identity</strong><br><small class="text-muted">Design Studio</small></td>
+                        <td><span class="badge bg-warning text-dark">Creative</span></td>
+                        <td><span class="badge bg-warning text-dark">Review</span></td>
+                        <td>Due: Oct 18</td>
+                        <td>90% Completed</td>
+                        <td class="text-end">
+                            <a href="404.html" class="btn btn-sm btn-outline-primary"><i class="fas fa-eye"></i> View</a>
+                            <a href="404.html" class="btn btn-sm btn-outline-success"><i class="fas fa-check"></i></a>
+                        </td>
+                    </tr>
+                `;
+
+            } else {
+                roleTitle.textContent = "Client Portal & Services";
+                roleSubtitle.textContent = "Manage your subscribed business consulting packages, active projects, and invoices.";
+                primaryActionBtn.innerHTML = '<i class="fas fa-paper-plane me-2"></i> Request New Service';
+                tableTitle.textContent = "My Active Subscriptions & Invoices";
+
+                statsContainer.innerHTML = `
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="stat-card">
+                            <div class="stat-info">
+                                <p>Active Services</p>
+                                <h3>4</h3>
+                                <div class="stat-trend text-success"><i class="fas fa-check"></i> Premium Tier</div>
+                            </div>
+                            <div class="stat-icon bg-primary bg-opacity-10 text-primary"><i class="fas fa-briefcase"></i></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="stat-card">
+                            <div class="stat-info">
+                                <p>Total Invoices</p>
+                                <h3>$12,450</h3>
+                                <div class="stat-trend text-muted"><i class="fas fa-file-invoice"></i> All Paid</div>
+                            </div>
+                            <div class="stat-icon bg-success bg-opacity-10 text-success"><i class="fas fa-receipt"></i></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="stat-card">
+                            <div class="stat-info">
+                                <p>Open Tickets</p>
+                                <h3>1</h3>
+                                <div class="stat-trend text-primary"><i class="fas fa-headset"></i> Responded</div>
+                            </div>
+                            <div class="stat-icon bg-info bg-opacity-10 text-info"><i class="fas fa-comments"></i></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="stat-card">
+                            <div class="stat-info">
+                                <p>Next Renewal</p>
+                                <h3>28 Days</h3>
+                                <div class="stat-trend text-warning"><i class="fas fa-clock"></i> Auto-renew enabled</div>
+                            </div>
+                            <div class="stat-icon bg-warning bg-opacity-10 text-warning"><i class="fas fa-calendar-check"></i></div>
+                        </div>
+                    </div>
+                `;
+
+                tableBody.innerHTML = `
+                    <tr>
+                        <td><strong>Corporate Tax Consulting</strong><br><small class="text-muted">INV-2026-089</small></td>
+                        <td><span class="badge bg-primary">Financial</span></td>
+                        <td><span class="badge bg-success">Paid</span></td>
+                        <td>Oct 01, 2026</td>
+                        <td>$3,200.00</td>
+                        <td class="text-end"><a href="404.html" class="btn btn-sm btn-outline-primary"><i class="fas fa-file-pdf"></i> PDF</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Market Analysis & Advisory</strong><br><small class="text-muted">INV-2026-054</small></td>
+                        <td><span class="badge bg-info">Strategy</span></td>
+                        <td><span class="badge bg-success">Paid</span></td>
+                        <td>Sep 15, 2026</td>
+                        <td>$4,500.00</td>
+                        <td class="text-end"><a href="404.html" class="btn btn-sm btn-outline-primary"><i class="fas fa-file-pdf"></i> PDF</a></td>
+                    </tr>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>

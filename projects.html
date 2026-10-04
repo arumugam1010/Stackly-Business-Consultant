@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Buskey - Corporate Business Template">
+
+    <!-- ========== Page Title ========== -->
+    <title>Buskey - Corporate Business Template</title>
+
+    <!-- ========== Favicon Icon ========== -->
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+
+    <!-- ========== Start Stylesheet ========== -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/flaticon-business-set.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/bootsnav.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- ========== End Stylesheet ========== -->
+
+    <!-- Project Cards Equal Height & Baseline Alignment -->
+    <style>
+        .portfolio-area .portfolio-items .pf-item {
+            width: 33.333333% !important;
+            padding: 15px !important;
+        }
+        .portfolio-area .pf-item .item-inner {
+            height: 260px !important;
+            overflow: hidden !important;
+            position: relative !important;
+            border-top-left-radius: 12px !important;
+            border-top-right-radius: 12px !important;
+            border: 1.5px solid #cbd5e1 !important;
+            border-bottom: none !important;
+            transition: all 0.3s ease !important;
+        }
+        .portfolio-area .pf-item .item-inner img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            display: block !important;
+            border-radius: 0 !important;
+        }
+        .portfolio-area .pf-item .info {
+            background: #ffffff !important;
+            border: 1.5px solid #cbd5e1 !important;
+            border-top: none !important;
+            border-bottom-left-radius: 12px !important;
+            border-bottom-right-radius: 12px !important;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04) !important;
+            display: flex !important;
+            flex-direction: column !important;
+            height: 220px !important;
+            padding: 25px 30px !important;
+            width: 100% !important;
+            text-align: left !important;
+            transition: all 0.3s ease !important;
+        }
+        .portfolio-area .pf-item:hover .item-inner {
+            border-color: #0056b3 !important;
+        }
+        .portfolio-area .pf-item:hover .info {
+            border-color: #0056b3 !important;
+            box-shadow: 0 12px 28px rgba(0, 86, 179, 0.12) !important;
+            transform: translateY(-2px) !important;
+        }
+        .portfolio-area .pf-item .info h4 {
+            font-weight: 600 !important;
+            margin-top: 0 !important;
+            margin-bottom: 8px !important;
+            min-height: 28px !important;
+            display: flex !important;
+            align-items: center !important;
+        }
+        .portfolio-area .pf-item .info ul {
+            margin-bottom: 12px !important;
+            min-height: 22px !important;
+        }
+        .portfolio-area .pf-item .info p {
+            margin-bottom: 0 !important;
+            flex-grow: 1 !important;
+            color: #666 !important;
+            line-height: 1.6 !important;
+        }
+        @media (max-width: 991px) and (min-width: 768px) {
+            .portfolio-area .portfolio-items .pf-item {
+                width: 50% !important;
+            }
+        }
+        @media (max-width: 767px) {
+            .portfolio-area .portfolio-items .pf-item {
+                width: 100% !important;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Preloader Start -->
+    <div class="se-pre-con"></div>
+    <!-- Preloader Ends -->
+
+    <!-- Header 
+    ============================================= -->
+    <header>
+        <!-- Start Navigation -->
+        <nav class="navbar mobile-sidenav nav-border navbar-sticky  navbar-default validnavs dark">
+
+            <div class="container d-flex justify-content-between align-items-center">            
+                
+
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="index.html">
+                        <img src="images/logo-stackly.png" class="logo logo-display" alt="Stackly">
+                    </a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+
+                    <img src="images/logo-stackly.png" alt="Stackly">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-times"></i>
+                    </button>
+                    
+                    <ul class="nav navbar-nav navbar-center" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="about.html">About</a>
+                        </li>
+                        <li>
+                            <a href="services.html">Services</a>
+                        </li>
+                        <li class="active">
+                            <a href="projects.html">Projects</a>
+                        </li>
+                        <li>
+                            <a href="team.html">Team</a>
+                        </li>
+                        <li>
+                            <a href="contact.html">Contact</a>
+                        </li>
+                        <li id="nav-login-item">
+                            <a href="login.html" class="btn-nav-login">Login</a>
+                        </li>
+                        <li id="nav-register-item">
+                            <a href="register.html" class="btn-nav-register">Register</a>
+                        </li>
+                        <li id="nav-dashboard-item" style="display: none;">
+                            <a href="dashboard.html" class="btn-nav-dashboard"><i class="fas fa-th-large"></i> Dashboard</a>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+
+                <!-- Main Nav -->
+
+            </div>   
+        </nav>
+        <!-- End Navigation -->
+    </header>
+    <!-- End Header -->
+
+    <!-- Start Breadcrumb 
+    ============================================= -->
+    <div class="breadcrumb-area shadow dark bg-fixed text-center padding-xl text-light" style="background-image: url(images/banner-11.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 text-start">
+                    <h1>Our Projects</h1>
+                </div>
+                <div class="col-md-6 col-sm-6 text-end">
+                    <ul class="breadcrumb">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Page</a></li>
+                        <li class="active">Project</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb -->
+
+    <!-- Start Portfolio
+    ============================================= -->
+    <div class="portfolio-area default-padding">
+        <div class="container">
+            <div class="row">
+                <div class="site-heading text-center">
+                    <div class="col-lg-8 offset-lg-2">
+                        <h2>Complate Cases</h2>
+                        <p>
+                            Able an hope of body. Any nay shyness article matters own removal nothing his forming. Gay own additions education satisfied the perpetual. If he cause manor happy. Without farther she exposed saw man led. Along on happy could cease green oh. 
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-items-area text-center">
+                <div class="row">
+                    <div class="col-md-12 portfolio-content">
+                        <div class="mix-item-menu active-theme text-center">
+                            <button class="active" data-filter="*">All</button>
+                            <button data-filter=".development">Development</button>
+                            <button data-filter=".design">Design</button>
+                            <button data-filter=".photography">Photography</button>
+                            <button data-filter=".branding">branding</button>
+                            <button data-filter=".video">video</button>
+                        </div>
+                        <!-- End Mixitup Nav-->
+
+                        <div class="magnific-mix-gallery masonary">
+                            <div id="portfolio-grid" class="portfolio-items">
+                                <div class="pf-item branding photography">
+                                    <div class="item-inner">
+                                        <img src="images/portfolio-1.jpg"  alt="image not found">
+                                        <div class="overlay">
+                                            <div class="view-list">
+                                                <a href="images/portfolio-1.jpg" class="item popup-link"><i class="fa fa-eye"></i></a>
+                                                <a href="404.html"><i class="fa fa-link"></i></a>
+                                            </div>
+                                        </div>        
+                                    </div>
+                                    <div class="info">
+                                        <h4><a href="404.html">Startup Funding</a></h4>
+                                        <ul>
+                                            <li>
+                                                <a href="#">finance</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">accounting</a>
+                                            </li>
+                                        </ul>
+                                        <p>
+                                            It esteems luckily mr or picture placing drawing no. Apartments frequently or motionless on reasonable projecting expression. Way mrs end gave tall walk fact bed.
+                                        </p>
+                                    </div> 
+                                </div>
+                                <div class="pf-item video development">
+                                    <div class="item-inner">
+                                        <img src="images/portfolio-2.jpg"  alt="image not found">
+                                        <div class="overlay">
+                                            <div class="view-list">
+                                                <a href="images/portfolio-2.jpg" class="item popup-link"><i class="fa fa-eye"></i></a>
+                                                <a href="404.html"><i class="fa fa-link"></i></a>
+                                            </div>
+                                        </div>           
+                                    </div>
+                                    <div class="info">
+                                        <h4><a href="404.html">Accounting Advisory</a></h4>
+                                        <ul>
+                                            <li>
+                                                <a href="#">finance</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">accounting</a>
+                                            </li>
+                                        </ul>
+                                        <p>
+                                            It esteems luckily mr or picture placing drawing no. Apartments frequently or motionless on reasonable projecting expression. Way mrs end gave tall walk fact bed.
+                                        </p>
+                                    </div> 
+                                </div>
+                                <div class="pf-item design photography">
+                                    <div class="item-inner">
+                                        <img src="images/portfolio-3.jpg"  alt="image not found">
+                                        <div class="overlay">
+                                            <div class="view-list">
+                                                <a href="images/portfolio-3.jpg" class="item popup-link"><i class="fa fa-eye"></i></a>
+                                                <a href="404.html"><i class="fa fa-link"></i></a>
+                                            </div>
+                                        </div>           
+                                    </div>
+                                    <div class="info">
+                                        <h4><a href="404.html">Merger & Acquisition</a></h4>
+                                        <ul>
+                                            <li>
+                                                <a href="#">finance</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">accounting</a>
+                                            </li>
+                                        </ul>
+                                        <p>
+                                            It esteems luckily mr or picture placing drawing no. Apartments frequently or motionless on reasonable projecting expression. Way mrs end gave tall walk fact bed.
+                                        </p>
+                                    </div> 
+                                </div>
+                                <div class="pf-item branding video">
+                                    <div class="item-inner">
+                                        <img src="images/portfolio-5.jpg"  alt="image not found">
+                                        <div class="overlay">
+                                            <div class="view-list">
+                                                <a href="images/portfolio-5.jpg" class="item popup-link"><i class="fa fa-eye"></i></a>
+                                                <a href="404.html"><i class="fa fa-link"></i></a>
+                                            </div>
+                                        </div>           
+                                    </div>
+                                    <div class="info">
+                                        <h4><a href="404.html">Business Matching</a></h4>
+                                        <ul>
+                                            <li>
+                                                <a href="#">finance</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">accounting</a>
+                                            </li>
+                                        </ul>
+                                        <p>
+                                            It esteems luckily mr or picture placing drawing no. Apartments frequently or motionless on reasonable projecting expression. Way mrs end gave tall walk fact bed.
+                                        </p>
+                                    </div> 
+                                </div>
+                                <div class="pf-item design photography">
+                                    <div class="item-inner">
+                                        <img src="images/portfolio-4.jpg"  alt="image not found">
+                                        <div class="overlay">
+                                            <div class="view-list">
+                                                <a href="images/portfolio-4.jpg" class="item popup-link"><i class="fa fa-eye"></i></a>
+                                                <a href="404.html"><i class="fa fa-link"></i></a>
+                                            </div>
+                                        </div>           
+                                    </div>
+                                    <div class="info">
+                                        <h4><a href="404.html">Assets For Technology </a></h4>
+                                        <ul>
+                                            <li>
+                                                <a href="#">finance</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">accounting</a>
+                                            </li>
+                                        </ul>
+                                        <p>
+                                            It esteems luckily mr or picture placing drawing no. Apartments frequently or motionless on reasonable projecting expression. Way mrs end gave tall walk fact bed.
+                                        </p>
+                                    </div> 
+                                </div>
+                                <div class="pf-item branding design development">
+                                    <div class="item-inner">
+                                        <img src="images/portfolio-6.jpg"  alt="image not found">
+                                        <div class="overlay">
+                                            <div class="view-list">
+                                                <a href="images/portfolio-6.jpg" class="item popup-link"><i class="fa fa-eye"></i></a>
+                                                <a href="404.html"><i class="fa fa-link"></i></a>
+                                            </div>
+                                        </div>           
+                                    </div>
+                                    <div class="info">
+                                        <h4><a href="404.html">Startup Funding</a></h4>
+                                        <ul>
+                                            <li>
+                                                <a href="#">finance</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">accounting</a>
+                                            </li>
+                                        </ul>
+                                        <p>
+                                            It esteems luckily mr or picture placing drawing no. Apartments frequently or motionless on reasonable projecting expression. Way mrs end gave tall walk fact bed.
+                                        </p>
+                                    </div> 
+                                </div>
+                                <!-- Item 7 -->
+                                <div class="pf-item development design">
+                                    <div class="item-inner">
+                                        <img src="images/services-1.jpg" alt="Global Cloud Migration">
+                                        <div class="overlay">
+                                            <div class="view-list">
+                                                <a href="images/services-1.jpg" class="item popup-link"><i class="fa fa-eye"></i></a>
+                                                <a href="404.html"><i class="fa fa-link"></i></a>
+                                            </div>
+                                        </div>           
+                                    </div>
+                                    <div class="info">
+                                        <h4><a href="404.html">Global Cloud Migration</a></h4>
+                                        <ul>
+                                            <li><a href="404.html">cloud</a></li>
+                                            <li><a href="404.html">devops</a></li>
+                                        </ul>
+                                        <p>Zero-downtime multi-region cloud overhaul for tier-1 investment bank with sub-millisecond execution.</p>
+                                    </div> 
+                                </div>
+                                <!-- Item 8 -->
+                                <div class="pf-item video development">
+                                    <div class="item-inner">
+                                        <img src="images/services-2.jpg" alt="AI Predictive Modeling">
+                                        <div class="overlay">
+                                            <div class="view-list">
+                                                <a href="images/services-2.jpg" class="item popup-link"><i class="fa fa-eye"></i></a>
+                                                <a href="404.html"><i class="fa fa-link"></i></a>
+                                            </div>
+                                        </div>           
+                                    </div>
+                                    <div class="info">
+                                        <h4><a href="404.html">AI Predictive Modeling</a></h4>
+                                        <ul>
+                                            <li><a href="404.html">machine learning</a></li>
+                                            <li><a href="404.html">automation</a></li>
+                                        </ul>
+                                        <p>Real-time algorithmic fraud detection platform processing over 45,000 transactions per second.</p>
+                                    </div> 
+                                </div>
+                                <!-- Item 9 -->
+                                <div class="pf-item branding photography">
+                                    <div class="item-inner">
+                                        <img src="images/services-3.jpg" alt="Supply Chain Resilience">
+                                        <div class="overlay">
+                                            <div class="view-list">
+                                                <a href="images/services-3.jpg" class="item popup-link"><i class="fa fa-eye"></i></a>
+                                                <a href="404.html"><i class="fa fa-link"></i></a>
+                                            </div>
+                                        </div>           
+                                    </div>
+                                    <div class="info">
+                                        <h4><a href="404.html">Supply Chain Intelligence</a></h4>
+                                        <ul>
+                                            <li><a href="404.html">logistics</a></li>
+                                            <li><a href="404.html">operations</a></li>
+                                        </ul>
+                                        <p>End-to-end container tracking telemetry reducing international demurrage costs by 34%.</p>
+                                    </div> 
+                                </div>
+                                <!-- Item 10 -->
+                                <div class="pf-item design development">
+                                    <div class="item-inner">
+                                        <img src="images/services-4.jpg" alt="Cybersecurity Architecture">
+                                        <div class="overlay">
+                                            <div class="view-list">
+                                                <a href="images/services-4.jpg" class="item popup-link"><i class="fa fa-eye"></i></a>
+                                                <a href="404.html"><i class="fa fa-link"></i></a>
+                                            </div>
+                                        </div>           
+                                    </div>
+                                    <div class="info">
+                                        <h4><a href="404.html">Zero-Trust Cyber Fortress</a></h4>
+                                        <ul>
+                                            <li><a href="404.html">cyber</a></li>
+                                            <li><a href="404.html">security</a></li>
+                                        </ul>
+                                        <p>Institutional perimeter protection and encrypted access controls spanning 45 global data centers.</p>
+                                    </div> 
+                                </div>
+                                <!-- Item 11 -->
+                                <div class="pf-item branding video">
+                                    <div class="item-inner">
+                                        <img src="images/services-5.jpg" alt="Renewable Energy Financing">
+                                        <div class="overlay">
+                                            <div class="view-list">
+                                                <a href="images/services-5.jpg" class="item popup-link"><i class="fa fa-eye"></i></a>
+                                                <a href="404.html"><i class="fa fa-link"></i></a>
+                                            </div>
+                                        </div>           
+                                    </div>
+                                    <div class="info">
+                                        <h4><a href="404.html">Green Energy Syndicate</a></h4>
+                                        <ul>
+                                            <li><a href="404.html">esg</a></li>
+                                            <li><a href="404.html">clean energy</a></li>
+                                        </ul>
+                                        <p>Structuring $450M in green bond issuances for utility-scale solar installations across North America.</p>
+                                    </div> 
+                                </div>
+                                <!-- Item 12 -->
+                                <div class="pf-item design photography">
+                                    <div class="item-inner">
+                                        <img src="images/service-1.jpg" alt="FinTech Banking App">
+                                        <div class="overlay">
+                                            <div class="view-list">
+                                                <a href="images/service-1.jpg" class="item popup-link"><i class="fa fa-eye"></i></a>
+                                                <a href="404.html"><i class="fa fa-link"></i></a>
+                                            </div>
+                                        </div>           
+                                    </div>
+                                    <div class="info">
+                                        <h4><a href="404.html">Next-Gen Wealth Portal</a></h4>
+                                        <ul>
+                                            <li><a href="404.html">fintech</a></li>
+                                            <li><a href="404.html">mobile</a></li>
+                                        </ul>
+                                        <p>High-net-worth client portfolio dashboard with biometric security and real-time market news feeds.</p>
+                                    </div> 
+                                </div>
+                           
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Portfolio -->
+
+    <!-- Start Industry Transformation Impact (8 Sector Impact Items)
+    ============================================= -->
+    <div class="industry-impact-area default-padding bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="site-heading text-center">
+                        <h4>Demonstrated Results</h4>
+                        <h2>Industry Transformation Benchmarks</h2>
+                        <p>Empirical evidence of bottom-line ROI and operational agility delivered across major enterprise sectors.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4">
+                <!-- 1. Banking -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="content-grid-card">
+                        <div class="content-card-tag">Banking & Finance</div>
+                        <div class="content-card-icon"><i class="fas fa-university"></i></div>
+                        <h4 class="fw-bold mb-1">+142% Capital Lift</h4>
+                        <p class="text-muted small flex-grow-1">Re-engineered collateral allocations and automated risk scoring across $12B loan portfolios.</p>
+                        <a href="404.html" class="btn btn-sm btn-outline-primary mt-3">View Benchmark</a>
+                    </div>
+                </div>
+                <!-- 2. Healthcare -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="content-grid-card">
+                        <div class="content-card-tag">Healthcare & Pharma</div>
+                        <div class="content-card-icon"><i class="fas fa-heartbeat"></i></div>
+                        <h4 class="fw-bold mb-1">99.99% Compliance</h4>
+                        <p class="text-muted small flex-grow-1">Secured electronic patient health records across 80 hospital networks with zero audit breaches.</p>
+                        <a href="404.html" class="btn btn-sm btn-outline-primary mt-3">View Benchmark</a>
+                    </div>
+                </div>
+                <!-- 3. Manufacturing -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="content-grid-card">
+                        <div class="content-card-tag">Manufacturing</div>
+                        <div class="content-card-icon"><i class="fas fa-industry"></i></div>
+                        <h4 class="fw-bold mb-1">-38% Supply Drag</h4>
+                        <p class="text-muted small flex-grow-1">Implemented IoT sensor telemetry and predictive maintenance for precision automotive factories.</p>
+                        <a href="404.html" class="btn btn-sm btn-outline-primary mt-3">View Benchmark</a>
+                    </div>
+                </div>
+                <!-- 4. Retail -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="content-grid-card">
+                        <div class="content-card-tag">E-Commerce</div>
+                        <div class="content-card-icon"><i class="fas fa-shopping-cart"></i></div>
+                        <h4 class="fw-bold mb-1">+210% Conversions</h4>
+                        <p class="text-muted small flex-grow-1">Architected personalized checkout journeys and dynamic recommendation algorithms for retail leaders.</p>
+                        <a href="404.html" class="btn btn-sm btn-outline-primary mt-3">View Benchmark</a>
+                    </div>
+                </div>
+                <!-- 5. Telecom -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="content-grid-card">
+                        <div class="content-card-tag">Telecommunications</div>
+                        <div class="content-card-icon"><i class="fas fa-signal"></i></div>
+                        <h4 class="fw-bold mb-1">4.2M Concurrency</h4>
+                        <p class="text-muted small flex-grow-1">Deployed high-concurrency self-service subscriber portal with automated billing dispute resolution.</p>
+                        <a href="404.html" class="btn btn-sm btn-outline-primary mt-3">View Benchmark</a>
+                    </div>
+                </div>
+                <!-- 6. CleanTech -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="content-grid-card">
+                        <div class="content-card-tag">CleanTech & Energy</div>
+                        <div class="content-card-icon"><i class="fas fa-solar-panel"></i></div>
+                        <h4 class="fw-bold mb-1">45K Tons Carbon Cut</h4>
+                        <p class="text-muted small flex-grow-1">Structured renewable power purchase agreements across 12 commercial logistics fulfillment hubs.</p>
+                        <a href="404.html" class="btn btn-sm btn-outline-primary mt-3">View Benchmark</a>
+                    </div>
+                </div>
+                <!-- 7. SaaS -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="content-grid-card">
+                        <div class="content-card-tag">Enterprise SaaS</div>
+                        <div class="content-card-icon"><i class="fas fa-laptop"></i></div>
+                        <h4 class="fw-bold mb-1">70% Faster Cycle</h4>
+                        <p class="text-muted small flex-grow-1">Automated CI/CD security pipelines reducing feature deployment time from weeks to hours.</p>
+                        <a href="404.html" class="btn btn-sm btn-outline-primary mt-3">View Benchmark</a>
+                    </div>
+                </div>
+                <!-- 8. Public Sector -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="content-grid-card">
+                        <div class="content-card-tag">Infrastructure</div>
+                        <div class="content-card-icon"><i class="fas fa-building"></i></div>
+                        <h4 class="fw-bold mb-1">99.8% SLA Score</h4>
+                        <p class="text-muted small flex-grow-1">Transformed municipal transit payment gateway with contactless NFC and instant route optimization.</p>
+                        <a href="404.html" class="btn btn-sm btn-outline-primary mt-3">View Benchmark</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Industry Transformation Impact -->
+
+    <!-- Start Footer 
+    ============================================= -->
+    <footer class="default-padding-top text-light">
+        <div class="container">
+            <div class="f-items fv1">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 item">
+                        <div class="f-item">
+                            <div class="footer-logo">
+                                <a href="index.html">
+                                    <img src="images/logo-stackly-light.png" alt="Stackly Logo">
+                                </a>
+                            </div>
+                            <p>
+                                Excellence decisively nay man yet impression for contrasted remarkably. There spoke happy for you are out. Fertile how old address did showing because sitting replied six. Had arose guest visit going off child she new.
+                            </p>
+                            <p>
+                                <span>Please write your email and get our amazing updates, news and support</span>
+                            </p>
+                            <div class="subscribe">
+                                <form action="404.html">
+                                    <div class="input-group stylish-input-group">
+                                        <input type="email" name="email" class="form-control" placeholder="Enter your e-mail here">
+                                        <span class="input-group-addon">
+                                            <button type="submit">
+                                                <i class="fa fa-paper-plane"></i>
+                                            </button>  
+                                        </span>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 item">
+                        <div class="f-item link full">
+                            <h4>Quick Links</h4>
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="services.html">Services</a></li>
+                                <li><a href="projects.html">Projects</a></li>
+                                <li><a href="team.html">Team</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 item">
+                        <div class="f-item">
+                            <h4>twitter widget</h4>
+                            <div class="twitter-item">
+                                <div class="twitter-content">
+                                    <p>
+                                        Looking for an awesome CREATIVE WordPress Theme? Esquise was updated and optimized to run even better.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="twitter-item">
+                                <div class="twitter-content">
+                                    <p>
+                                        It is a long established fact that a reader will be distracted by the readable content.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Start Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p>&copy; Copyright 2025. Buskey Template By <a href="#">Validthemes</a></p>
+                    </div>
+                    <div class="col-lg-6 footer-bottom-menu text-end">
+                        <ul>
+                            <li><a href="404.html">Terms of Use</a></li>
+                            <li><a href="404.html">Privacy Policy</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Bottom -->
+    </footer>
+    <!-- End Footer -->
+
+    <!-- jQuery Frameworks
+    ============================================= -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.appear.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/count-to.js"></script>
+    <script src="js/bootsnav.js"></script>
+    <script src="js/timeline.min.js"></script>
+    <script src="js/progress-bar.min.js"></script>
+    <script src="js/Chart.min.js"></script>
+    <script src="js/custom-chart.js"></script>
+    <script src="js/main.js"></script>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Buskey - Corporate Business Template">
+
+    <!-- ========== Page Title ========== -->
+    <title>Register - Buskey Platform</title>
+
+    <!-- ========== Favicon Icon ========== -->
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+
+    <!-- ========== Google Fonts: Plus Jakarta Sans ========== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+    <!-- ========== Start Stylesheet ========== -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- ========== End Stylesheet ========== -->
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #081321 0%, #0f2239 55%, #183354 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+
+        @media (min-width: 576px) and (min-height: 580px) {
+            body {
+                height: 100vh;
+                overflow: hidden;
+            }
+        }
+
+        @media (max-width: 575.98px), (max-height: 579.98px) {
+            body {
+                min-height: 100vh;
+                height: auto !important;
+                overflow-y: auto !important;
+                padding: 20px 12px !important;
+                align-items: flex-start;
+            }
+        }
+
+        .auth-card {
+            width: 100%;
+            max-width: 480px;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+            padding: 24px 28px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            margin: auto 0;
+        }
+
+        @media (max-width: 480px) {
+            .auth-card {
+                padding: 18px 16px;
+                max-width: 100%;
+                border-radius: 10px;
+            }
+            .role-switch-btn {
+                font-size: 11px;
+                padding: 6px 2px;
+            }
+        }
+
+        /* Top header inside card */
+        .auth-card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .auth-logo {
+            max-height: 32px;
+        }
+
+        .home-btn-link {
+            font-size: 12px;
+            color: #64748b;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 10px;
+            border-radius: 8px;
+            background: #f1f5f9;
+            transition: all 0.2s;
+        }
+
+        .home-btn-link:hover {
+            color: #0056b3;
+            background: #e2e8f0;
+        }
+
+        /* Segmented Role Switcher */
+        .role-switch-container {
+            display: flex;
+            background: #f1f5f9;
+            padding: 3px;
+            border-radius: 10px;
+            margin-bottom: 14px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .role-switch-btn {
+            flex: 1;
+            padding: 6px 4px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 600;
+            color: #475569;
+            background: transparent;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+        }
+
+        .role-switch-btn:hover {
+            color: #0056b3;
+        }
+
+        .role-switch-btn.active {
+            background: #0056b3;
+            color: #ffffff;
+            box-shadow: 0 2px 6px rgba(0, 86, 179, 0.25);
+        }
+
+        /* Compact Form Controls */
+        .form-label {
+            font-size: 11px;
+            font-weight: 600;
+            color: #334155;
+            margin-bottom: 3px;
+        }
+
+        .form-control-sm-custom {
+            height: 36px;
+            font-size: 13px;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+            padding: 6px 10px;
+        }
+
+        .form-control-sm-custom:focus {
+            border-color: #0056b3;
+            box-shadow: 0 0 0 2px rgba(0, 86, 179, 0.15);
+        }
+
+        .input-group-text-custom {
+            background-color: #f8fafc;
+            border: 1px solid #cbd5e1;
+            font-size: 12px;
+            color: #64748b;
+            padding: 6px 10px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Submit Button */
+        .btn-submit-custom {
+            background-color: #0056b3;
+            color: #ffffff;
+            border: none;
+            border-radius: 10px;
+            height: 40px;
+            font-size: 14px;
+            font-weight: 600;
+            width: 100%;
+            transition: all 0.2s;
+        }
+
+        .btn-submit-custom:hover {
+            background-color: #004494;
+            color: #ffffff;
+            box-shadow: 0 3px 10px rgba(0, 86, 179, 0.3);
+        }
+
+        /* Checkbox Fix */
+        .form-check {
+            display: inline-flex !important;
+            align-items: center !important;
+            padding-left: 0 !important;
+            min-height: auto !important;
+            margin: 0 !important;
+            cursor: pointer;
+        }
+
+        .form-check-input,
+        input[type="checkbox"] {
+            min-height: 16px !important;
+            height: 16px !important;
+            width: 16px !important;
+            max-height: 16px !important;
+            max-width: 16px !important;
+            margin: 0 8px 0 0 !important;
+            float: none !important;
+            flex-shrink: 0 !important;
+            border: 1.5px solid #0056b3 !important;
+            border-radius: 4px !important;
+            cursor: pointer !important;
+            vertical-align: middle !important;
+            box-shadow: none !important;
+            background-color: #ffffff;
+            accent-color: #0056b3 !important;
+        }
+
+        .form-check-input:checked,
+        input[type="checkbox"]:checked {
+            background-color: #0056b3 !important;
+            border-color: #0056b3 !important;
+        }
+
+        .form-check-label {
+            cursor: pointer !important;
+            margin-bottom: 0 !important;
+            font-size: 11px;
+            color: #475569;
+            user-select: none;
+            line-height: 1.2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="auth-card">
+        
+        <!-- Card Topbar: Logo & Return Link -->
+        <div class="auth-card-top">
+            <a href="index.html" title="Buskey Home">
+                <img src="images/logo-stackly.png" alt="Stackly Logo" class="auth-logo">
+            </a>
+            <a href="index.html" class="home-btn-link" title="Return to public site">
+                <i class="fas fa-home me-1"></i> Home
+            </a>
+        </div>
+
+        <div class="mb-3">
+            <h5 class="fw-bold text-dark mb-0" style="font-size: 17px;">Create Account</h5>
+            <small class="text-muted" style="font-size: 12px;">Set up your role dashboard access</small>
+        </div>
+
+        <!-- Role Segmented Switcher -->
+        <div class="role-switch-container">
+            <button type="button" class="role-switch-btn active" data-role="admin">
+                <i class="fas fa-user-shield"></i> Admin
+            </button>
+            <button type="button" class="role-switch-btn" data-role="manager">
+                <i class="fas fa-briefcase"></i> Manager
+            </button>
+            <button type="button" class="role-switch-btn" data-role="user">
+                <i class="fas fa-user"></i> Client
+            </button>
+        </div>
+        <input type="hidden" id="regSelectedRole" value="admin">
+
+        <!-- Alert Notification -->
+        <div id="registerAlert" class="alert alert-danger py-1 px-2 mb-2" style="display: none; font-size: 11px;" role="alert"></div>
+
+        <form id="registerForm">
+            
+            <!-- Row 1: Name and Email -->
+            <div class="row g-2 mb-2">
+                <div class="col-12 col-sm-6">
+                    <label class="form-label" for="regName">Full Name</label>
+                    <input type="text" class="form-control form-control-sm-custom" id="regName" placeholder="John Doe" required pattern="[^0-9]*" title="Numbers are not allowed in name" oninput="this.value = this.value.replace(/[0-9]/g, '')" onkeypress="if(event.key >= '0' && event.key <= '9') event.preventDefault();">
+                </div>
+                <div class="col-12 col-sm-6">
+                    <label class="form-label" for="regEmail">Email Address</label>
+                    <input type="email" class="form-control form-control-sm-custom" id="regEmail" placeholder="name@domain.com" required>
+                </div>
+            </div>
+
+            <!-- Row 2: Password and Confirm Password -->
+            <div class="row g-2 mb-2">
+                <div class="col-12 col-sm-6">
+                    <label class="form-label" for="regPassword">Password</label>
+                    <div class="input-group">
+                        <input type="password" class="form-control form-control-sm-custom" id="regPassword" placeholder="Create password" required>
+                        <button class="btn btn-outline-secondary input-group-text-custom" type="button" id="regTogglePasswordBtn">
+                            <i class="fas fa-eye" id="regToggleEyeIcon"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <label class="form-label" for="regConfirmPassword">Confirm Password</label>
+                    <input type="password" class="form-control form-control-sm-custom" id="regConfirmPassword" placeholder="Re-enter password" required>
+                </div>
+            </div>
+
+
+
+            <!-- Terms agreement -->
+            <div class="mb-3">
+                <label class="form-check" for="termsAgree">
+                    <input class="form-check-input" type="checkbox" id="termsAgree" required checked>
+                    <span class="form-check-label">
+                        I agree to the <a href="404.html" class="text-primary text-decoration-none">Terms</a> and <a href="404.html" class="text-primary text-decoration-none">Privacy Policy</a>
+                    </span>
+                </label>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn-submit-custom mb-2">
+                <i class="fas fa-user-plus me-1"></i> Register & Enter Dashboard
+            </button>
+
+            <!-- Switch to Login -->
+            <div class="text-center pt-2" style="font-size: 12px; border-top: 1px solid #f1f5f9;">
+                <span class="text-muted">Already have an account?</span>
+                <a href="login.html" class="text-primary fw-bold text-decoration-none ms-1">Login here</a>
+            </div>
+
+        </form>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/auth.js"></script>
+
+    <script>
+        // Role Segmented Switch
+        document.querySelectorAll('.role-switch-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.role-switch-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                document.getElementById('regSelectedRole').value = this.getAttribute('data-role');
+            });
+        });
+
+        // Toggle Password Eye
+        const toggleBtn = document.getElementById('regTogglePasswordBtn');
+        const passwordInput = document.getElementById('regPassword');
+        const toggleEyeIcon = document.getElementById('regToggleEyeIcon');
+        
+        toggleBtn.addEventListener('click', function() {
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleEyeIcon.classList.remove('fa-eye');
+                toggleEyeIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                toggleEyeIcon.classList.remove('fa-eye-slash');
+                toggleEyeIcon.classList.add('fa-eye');
+            }
+        });
+
+
+
+        // Form Submit
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const alertBox = document.getElementById('registerAlert');
+            alertBox.style.display = 'none';
+
+            const name = document.getElementById('regName').value;
+            const email = document.getElementById('regEmail').value;
+            const pass = document.getElementById('regPassword').value;
+            const confirmPass = document.getElementById('regConfirmPassword').value;
+            const role = document.getElementById('regSelectedRole').value;
+
+            if (pass !== confirmPass) {
+                alertBox.style.display = 'block';
+                alertBox.innerHTML = 'Passwords do not match.';
+                return;
+            }
+
+            const res = BuskeyAuth.register(name, email, pass, role);
+
+            if (!res.success) {
+                alertBox.style.display = 'block';
+                alertBox.innerHTML = res.errors.join('<br>');
+                return;
+            }
+
+            // Navigate to Dashboard
+            window.location.href = 'dashboard.html';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Buskey - Corporate Business Template">
+
+    <!-- ========== Page Title ========== -->
+    <title>Buskey - Corporate Business Template</title>
+
+    <!-- ========== Favicon Icon ========== -->
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+
+    <!-- ========== Start Stylesheet ========== -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/flaticon-business-set.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/bootsnav.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- ========== End Stylesheet ========== -->
+
+</head>
+
+<body>
+
+    <!-- Preloader Start -->
+    <div class="se-pre-con"></div>
+    <!-- Preloader Ends -->
+
+    <!-- Header 
+    ============================================= -->
+    <header>
+        <!-- Start Navigation -->
+        <nav class="navbar mobile-sidenav nav-border navbar-sticky  navbar-default validnavs dark">
+
+            <div class="container d-flex justify-content-between align-items-center">            
+                
+
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="index.html">
+                        <img src="images/logo-stackly.png" class="logo logo-display" alt="Stackly">
+                    </a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+
+                    <img src="images/logo-stackly.png" alt="Stackly">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-times"></i>
+                    </button>
+                    
+                    <ul class="nav navbar-nav navbar-center" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="about.html">About</a>
+                        </li>
+                        <li>
+                            <a href="services.html">Services</a>
+                        </li>
+                        <li>
+                            <a href="projects.html">Projects</a>
+                        </li>
+                        <li>
+                            <a href="team.html">Team</a>
+                        </li>
+                        <li class="active">
+                            <a href="contact.html">Contact</a>
+                        </li>
+                        <li id="nav-login-item">
+                            <a href="login.html" class="btn-nav-login">Login</a>
+                        </li>
+                        <li id="nav-register-item">
+                            <a href="register.html" class="btn-nav-register">Register</a>
+                        </li>
+                        <li id="nav-dashboard-item" style="display: none;">
+                            <a href="dashboard.html" class="btn-nav-dashboard"><i class="fas fa-th-large"></i> Dashboard</a>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+
+                <!-- Main Nav -->
+
+            </div>   
+        </nav>
+        <!-- End Navigation -->
+    </header>
+    <!-- End Header -->
+
+    <!-- Start Breadcrumb 
+    ============================================= -->
+    <div class="breadcrumb-area shadow dark bg-fixed text-center padding-xl text-light" style="background-image: url(images/banner-10.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 text-start">
+                    <h1>Contact Us</h1>
+                </div>
+                <div class="col-md-6 col-sm-6 text-end">
+                    <ul class="breadcrumb">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Page</a></li>
+                        <li class="active">Contact</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb -->
+
+    <!-- Start Contact 
+    ============================================= -->
+    <div class="contact-form-area default-padding"> 
+        <div class="container">
+            <div class="row">
+                <!-- Start Contact Form -->
+                <div class="col-md-7 contact-form">
+                    <div class="content">
+                        <div class="heading">
+                            <h3>Let's Talk about Your Business</h3>
+                        </div>
+                        <form action="#" method="POST" class="contact-form">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <input class="form-control" id="name" name="name" placeholder="Name" type="text" pattern="[^0-9]*" title="Numbers are not allowed in name" oninput="this.value = this.value.replace(/[0-9]/g, '')" onkeypress="if(event.key >= '0' && event.key <= '9') event.preventDefault();">
+                                        <span class="alert-error"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <input class="form-control" id="email" name="email" placeholder="Email*" type="email">
+                                        <span class="alert-error"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <input class="form-control" id="phone" name="phone" placeholder="Phone" type="tel" inputmode="tel" pattern="[0-9+\s\-()]*" title="Alphabets are not allowed in phone number" oninput="this.value = this.value.replace(/[a-zA-Z]/g, '').replace(/[^0-9+\s\-()]/g, '')" onkeypress="if(/[a-zA-Z]/.test(event.key)) event.preventDefault();">
+                                        <span class="alert-error"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="form-group comments">
+                                        <textarea class="form-control" id="comments" name="comments" placeholder="Tell Us About Project *"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <button type="submit" name="submit" id="submit">
+                                        Send Message <i class="fa fa-paper-plane"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Alert Message -->
+                            <div class="col-md-12 alert-notification">
+                                <div id="message" class="alert-msg"></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- End Contact Form -->
+                <div class="col-md-5 office-info">
+                    <!-- Start Tab Contact Info -->
+                    <div class="tab-nvas">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="id-1" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
+                                    Headquarters</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="id-2" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">
+                                    USA Office
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="id-3" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">
+                                    France Office
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Start Tab Content -->
+                    <div class="tab-content tab-content-info">
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel">
+                                <div class="info title">
+                                    <ul>
+                                        <li>
+                                            <img src="images/office-1.jpg" alt="Headquarters">
+                                        </li>
+                                        <li>
+                                            <div class="icon">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                            </div>
+                                            <div class="info">
+                                                <p>
+                                                    Our Location
+                                                    <span>Chinnathirupathi, Salem, Tamil Nadu, India</span>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="icon">
+                                                <i class="fas fa-envelope-open"></i>
+                                            </div>
+                                            <div class="info">
+                                                <p>
+                                                    Send Us Mail
+                                                    <span>contact@buskey.com</span>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="icon">
+                                                <i class="fas fa-mobile-alt"></i>
+                                            </div>
+                                            <div class="info">
+                                                <p>
+                                                    Call Us
+                                                    <span>+91 427 244 5678</span>
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="id-2">
+                                <div class="info title">
+                                    <ul>
+                                        <li>
+                                            <img src="images/office-2.jpg" alt="Thumb">
+                                        </li>
+                                        <li>
+                                            <div class="icon">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                            </div>
+                                            <div class="info">
+                                                <p>
+                                                    Our Location
+                                                    <span>California, TX 70240</span>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="icon">
+                                                <i class="fas fa-envelope-open"></i>
+                                            </div>
+                                            <div class="info">
+                                                <p>
+                                                    Send Us Mail
+                                                    <span>Info@gmail.com</span>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="icon">
+                                                <i class="fas fa-mobile-alt"></i>
+                                            </div>
+                                            <div class="info">
+                                                <p>
+                                                    Call Us
+                                                    <span>+123 456 7890</span>
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="id-3">
+                                <div class="info title">
+                                    <ul>
+                                        <li>
+                                            <img src="images/office-3.jpg" alt="Thumb">
+                                        </li>
+                                        <li>
+                                            <div class="icon">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                            </div>
+                                            <div class="info">
+                                                <p>
+                                                    Our Location
+                                                    <span>Malina City, MN 567894</span>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="icon">
+                                                <i class="fas fa-envelope-open"></i>
+                                            </div>
+                                            <div class="info">
+                                                <p>
+                                                    Send Us Mail
+                                                    <span>Info@yourdomain.com</span>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="icon">
+                                                <i class="fas fa-mobile-alt"></i>
+                                            </div>
+                                            <div class="info">
+                                                <p>
+                                                    Call Us
+                                                    <span>+123 456 6677</span>
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>   
+                    <!-- End Tab Contact Info -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Contact -->
+    
+
+    <!-- Start Maps Area 
+    ============================================= -->
+    <div class="maps-area-items">
+        <div class="maps-box oh">
+            <div class="google-maps">
+                <iframe src="https://maps.google.com/maps?q=Chinnathirupathi,+Salem,+Tamil+Nadu&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=&amp;output=embed" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+    <!-- End Maps Area -->
+
+    <!-- Start Footer 
+    ============================================= -->
+    <footer class="default-padding-top text-light">
+        <div class="container">
+            <div class="f-items fv1">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 item">
+                        <div class="f-item">
+                            <div class="footer-logo">
+                                <a href="index.html">
+                                    <img src="images/logo-stackly-light.png" alt="Stackly Logo">
+                                </a>
+                            </div>
+                            <p>
+                                Excellence decisively nay man yet impression for contrasted remarkably. There spoke happy for you are out. Fertile how old address did showing because sitting replied six. Had arose guest visit going off child she new.
+                            </p>
+                            <p>
+                                <span>Please write your email and get our amazing updates, news and support</span>
+                            </p>
+                            <div class="subscribe">
+                                <form action="404.html">
+                                    <div class="input-group stylish-input-group">
+                                        <input type="email" name="email" class="form-control" placeholder="Enter your e-mail here">
+                                        <span class="input-group-addon">
+                                            <button type="submit">
+                                                <i class="fa fa-paper-plane"></i>
+                                            </button>  
+                                        </span>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 item">
+                        <div class="f-item link full">
+                            <h4>Quick Links</h4>
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="services.html">Services</a></li>
+                                <li><a href="projects.html">Projects</a></li>
+                                <li><a href="team.html">Team</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 item">
+                        <div class="f-item">
+                            <h4>twitter widget</h4>
+                            <div class="twitter-item">
+                                <div class="twitter-content">
+                                    <p>
+                                        Looking for an awesome CREATIVE WordPress Theme? Esquise was updated and optimized to run even better.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="twitter-item">
+                                <div class="twitter-content">
+                                    <p>
+                                        It is a long established fact that a reader will be distracted by the readable content.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Start Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p>&copy; Copyright 2025. Buskey Template By <a href="#">Validthemes</a></p>
+                    </div>
+                    <div class="col-lg-6 footer-bottom-menu text-end">
+                        <ul>
+                            <li><a href="404.html">Terms of Use</a></li>
+                            <li><a href="404.html">Privacy Policy</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Bottom -->
+    </footer>
+    <!-- End Footer -->
+
+    <!-- jQuery Frameworks
+    ============================================= -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.appear.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/count-to.js"></script>
+    <script src="js/bootsnav.js"></script>
+    <script src="js/timeline.min.js"></script>
+    <script src="js/progress-bar.min.js"></script>
+    <script src="js/Chart.min.js"></script>
+    <script src="js/custom-chart.js"></script>
+    <script src="js/main.js"></script>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>

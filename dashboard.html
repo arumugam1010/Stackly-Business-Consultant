@@ -12,7 +12,8 @@
     <title>Dashboard - Stackly Corporate Business Platform</title>
 
     <!-- ========== Favicon Icon ========== -->
-    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.webp" type="image/webp">
+    <link rel="icon" href="images/favicon.webp" type="image/png">
 
     <!-- ========== Google Fonts: Plus Jakarta Sans & Outfit ========== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -667,8 +668,8 @@
         <!-- Start Sidebar (10 Pages / Modules) -->
         <aside class="sidebar" id="sidebar">
             <div class="sidebar-brand">
-                <a href="index.html">
-                    <img src="images/logo-stackly-light.png" alt="Stackly" style="max-height: 38px;">
+                <a href="#overview" class="dashboard-logo-link" id="sidebarLogoLink" title="Stackly Dashboard">
+                    <img src="images/logo-stackly-light.webp" alt="Stackly" style="max-height: 38px;">
                 </a>
                 <button type="button" class="btn btn-sm btn-dark text-white sidebar-close-btn" id="sidebarCloseBtn" style="display: none; background: transparent; border: none; font-size: 18px;">
                     <i class="fas fa-times"></i>
@@ -785,8 +786,8 @@
             <header class="topbar">
                 <div class="topbar-left">
                     <!-- Mobile Logo on Left Side End -->
-                    <a href="index.html" class="topbar-brand" title="Stackly Home">
-                        <img src="images/logo-stackly.png" alt="Stackly" class="topbar-logo">
+                    <a href="#overview" class="topbar-brand dashboard-logo-link" id="topbarLogoLink" title="Stackly Dashboard">
+                        <img src="images/logo-stackly.webp" alt="Stackly" class="topbar-logo">
                     </a>
                     <!-- Desktop Header Info -->
                     <div class="d-none d-lg-block">
@@ -1837,6 +1838,15 @@
                     }
                 }
                 showSection(targetId);
+            });
+        });
+
+        // Logo click navigation to dashboard first page (Overview)
+        document.querySelectorAll('.dashboard-logo-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                history.pushState(null, null, '#overview');
+                showSection('sec-overview');
             });
         });
 

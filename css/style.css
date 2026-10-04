@@ -1169,7 +1169,7 @@ a.left.carousel-control, a.right.carousel-control i {
     content: "";
     height: 100%;
     width: 100%;
-    background: url(../images/1.png);
+    background: url(../images/shape-1.webp);
     background-position: bottom center;
     z-index: -1;
     background-repeat: no-repeat;
@@ -6194,7 +6194,7 @@ footer .f-item.newsletter form .input-group-addon button {
   width: 100%;
   height: 100%;
   z-index: 999999;
-  background: url(../images/preloader.gif) center no-repeat #fff;
+  background: url(../images/preloader.webp) center no-repeat #fff;
   text-align: center;
 }
 
@@ -6511,7 +6511,7 @@ li.nav-item button {
 }
 
 .carousel-control-next-icon {
-  background-image: url(../images/right-arrow.png);
+  background-image: url(../images/right-arrow.webp);
 }
 
 .carousel-control-prev-icon {
@@ -6583,11 +6583,11 @@ li.nav-item:hover {
 }
 
 .banner-area.banner-5 .carousel-control-prev-icon {
-  background: url(../images/left-arrow.png);
+  background: url(../images/left-arrow.webp);
 }
 
 .banner-area.banner-5 .carousel-control-next-icon {
-  background: url(../images/left-arrow.png);
+  background: url(../images/left-arrow.webp);
   transform: rotate(180deg);
 }
 

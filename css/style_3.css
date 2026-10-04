@@ -3342,7 +3342,7 @@ ul.feature-info li {
 	content: "";
 	height: 100%;
 	width: 100%;
-	background: url(../images/3.png);
+	background: url(../images/shape-3.webp);
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: bottom center;
@@ -3360,7 +3360,7 @@ ul.feature-info li {
 	content: "";
 	height: 100%;
 	width: 100%;
-	background: url(../images/4.png);
+	background: url(../images/shape-4.webp);
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: bottom center;
@@ -3377,7 +3377,7 @@ ul.feature-info li {
 	content: "";
 	height: 100%;
 	width: 100%;
-	background: url(../images/3.png);
+	background: url(../images/shape-3.webp);
 	background-repeat: no-repeat;
 	background-position: bottom center;
 	z-index: -1;

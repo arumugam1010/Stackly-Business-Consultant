@@ -213,4 +213,5 @@
     }
 
     window.BuskeyAuth = BuskeyAuth;
+    window.StacklyAuth = BuskeyAuth;
 })(window);

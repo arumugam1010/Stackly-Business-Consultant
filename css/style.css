@@ -6697,6 +6697,21 @@ header nav.navbar.validnavs .navbar-brand img {
     display: block;
 }
 
+@media (min-width: 1024px) {
+    header nav.navbar.validnavs.white.no-background:not(.sticked) .navbar-brand img.logo-display {
+        display: block !important;
+    }
+    header nav.navbar.validnavs.white.no-background:not(.sticked) .navbar-brand img.logo-scrolled {
+        display: none !important;
+    }
+    header nav.navbar.validnavs.sticked .navbar-brand img.logo-display {
+        display: none !important;
+    }
+    header nav.navbar.validnavs.sticked .navbar-brand img.logo-scrolled {
+        display: block !important;
+    }
+}
+
 /* Action Button Core Styles */
 #nav-login-item > a,
 #nav-register-item > a,

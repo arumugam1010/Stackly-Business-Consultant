@@ -234,15 +234,15 @@
   .modern-services-area .item {
     text-align: center;
     display: block;
+    padding: 30px 20px;
+  }
+
+  .modern-services-area .item .icon {
+    margin: 0 auto 20px auto;
   }
 
   .modern-services-area .item i {
     margin: 0;
-    margin-bottom: 30px;
-  }
-
-  .modern-services-area .item {
-    padding-left: 30px;
   }
 
 
@@ -972,15 +972,15 @@
   .modern-services-area .item {
     text-align: center;
     display: block;
+    padding: 30px 20px;
+  }
+
+  .modern-services-area .item .icon {
+    margin: 0 auto 20px auto;
   }
 
   .modern-services-area .item i {
     margin: 0;
-    margin-bottom: 30px;
-  }
-
-  .modern-services-area .item {
-    padding-left: 30px;
   }
 
   banner-area, .banner-area div {
